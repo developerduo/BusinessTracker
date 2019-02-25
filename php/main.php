@@ -16,9 +16,9 @@
                 <div class="scroll" id="scroll">
                     
                     <ul>
-                        <a href="#"><li id="color1">BusinessTracker</li></a>
-                        <a href="#" ><li id="color2">About the Team</li></a>
-                        <a href="#" ><li id="color3">Contact</li></a>
+                        <a onclick=''><li id="color1">BusinessTracker</li></a>
+                        <a onclick=''><li id="color2">About the Team</li></a>
+                        <a onclick=''><li id="color3">Contact</li></a>
                     </ul>
 
                    <a href="login.php"> <button type="button" name="loginbtn" class="loginbtn" id="loginbtn">Login</button></a>
@@ -35,7 +35,7 @@
 
     </header>
 
-    <div class="midden">
+    <div class="midden" id='midden'>
 
     
 
