@@ -1,5 +1,5 @@
 <?php
 
- /* header("Location: https://businesstracker.damianpuister.nl/php/main.php"); /*
+ header("Location: ./php/main.php");
 
 ?>
