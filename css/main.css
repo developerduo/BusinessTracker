@@ -78,17 +78,19 @@ ul li {
 }
 
 .loginbtn{
-    border-radius: 50px;
+    border-radius: 10px;
+    outline: none;
     width: 100px;
     height: 40px;
     background-color: transparent;
     color: white;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 20px;
     position: absolute;
     top: 12px;
     right: 20px;
     transition: all 0.5s ease-in-out;
+    text-align: center;
 }
 
 .loginbtn:hover{
@@ -112,3 +114,32 @@ ul li {
   text-align: center;
 
 }
+
+#submit_btn{
+    width: 75px;
+    cursor: pointer;
+}
+
+.login_wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.login_wrapper h1{
+    color: white;
+    font-size: 40px;
+    font-family: sans-serif;
+}
+.input{
+    background-color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: black;
+    margin: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+

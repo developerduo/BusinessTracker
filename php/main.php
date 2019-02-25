@@ -12,16 +12,16 @@
 </head>
 <body onscroll="OnScroll()">
     <header class="bovenkant" >
-            <nav>
+            <nav id="top">
                 <div class="scroll" id="scroll">
                     
                     <ul>
-                        <a href="#" ><li id="color1">BusinessTracker</li></a>
-                        <a href="#"><li id="color2">About the Team</li></a>
-                        <a href="#"><li id="color3">Contact</li></a>
+                        <a href="#"><li id="color1">BusinessTracker</li></a>
+                        <a href="#" ><li id="color2">About the Team</li></a>
+                        <a href="#" ><li id="color3">Contact</li></a>
                     </ul>
 
-                   <a href="#"> <button type="button" name="loginbtn" class="loginbtn" id="loginbtn">Login</button></a>
+                   <a href="login.php"> <button type="button" name="loginbtn" class="loginbtn" id="loginbtn">Login</button></a>
                     
                 </div> 
             </nav>
@@ -37,11 +37,13 @@
 
     <div class="midden">
 
+    
+
        
 
     </div>
 
-    <div class="onderkant">
+    <div class="onderkant" id="bottom">
 
     </div>
 
