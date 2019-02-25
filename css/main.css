@@ -132,6 +132,7 @@ ul li {
     color: white;
     font-size: 40px;
     font-family: sans-serif;
+    margin: 0;
 }
 .input{
     background-color: white;
