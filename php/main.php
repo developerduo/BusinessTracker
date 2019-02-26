@@ -1,7 +1,9 @@
 <?php 
 session_start();
-$naam = $_SESSION['username'];
-echo $naam;
+
+if(!isset($_COOKIE['username'])) {
+    header('Location: ./logout.php');
+}
 
 ?>
 

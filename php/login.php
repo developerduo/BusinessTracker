@@ -15,7 +15,7 @@ if(@$_POST['submitLogin']) {
         header("Location: ./main.php");
         $row = $stmt->fetch();
         $firstname = $row['voornaam'];
-        $_SESSION['username'] = $firstname;
+        setcookie("username", $firstname, time()+3600);
     } 
 }
 catch(exception $E) {
