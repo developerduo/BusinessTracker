@@ -1,3 +1,10 @@
+<?php 
+session_start();
+$naam = $_SESSION['username'];
+echo $naam;
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
