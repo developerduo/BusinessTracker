@@ -1,14 +1,12 @@
 <?php
 
-define('DB_SERVER' , 'localhost');
-define('DB_USERNAME' , 'root');
-define('DB_PASSWORD' , '');
-define('DB_NAME' , 'businesstracker');
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$db = 'businesstracker';
 
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+try{
+    $conn = new PDO("mysql:host=$host;dbname=dbnaam", $username, $password);
+    
 
-if($link === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
 }
-
-?>
