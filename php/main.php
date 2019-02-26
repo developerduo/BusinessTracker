@@ -26,7 +26,7 @@
                 </div> 
             </nav>
         
-            <h3 class="bg-text">BusinessTracker</h3>
+            <h3 class="bg-text" id="output">BusinessTracker</h3>
           
         
         
@@ -50,5 +50,6 @@
 
 
     <script src="../js/main.js"></script>
+    <script src="../js/time.js"></script>
 </body>
 </html>
