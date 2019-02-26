@@ -1,6 +1,11 @@
 <?php
 require_once('config.php');
 session_start();
+
+if(isset($_COOKIE['username'])) {
+    header("Location: ./main.php");
+}
+
 if(@$_POST['submitLogin']) {
 
     try{
