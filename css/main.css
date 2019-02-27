@@ -18,6 +18,34 @@ html {
 
 }
 
+.bovenkant_uur{
+    max-width: 100%;
+    background-color: rgb(73, 73, 73);
+    z-index: 0;
+}
+
+
+
+.inklokken{
+    width: 90px;
+    cursor: pointer;
+    background-color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: black;
+    margin: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+    position: absolute;
+    left: 93%;
+    transition: all 0.5s ease-in-out;
+}
+
+.inklokken:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
 .midden {
     height: 700px;
     max-width: 100%;
@@ -144,4 +172,42 @@ ul li {
     font-size: 15px;
     border-radius: 10px;
 }
+
+#inklokscreen{
+    opacity: 0;
+    border: 0px solid transparent;
+    height: 400px;
+    width: 700px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.1s all ease-in-out;
+    
+}
+
+.closebtn{
+    left: 96%;
+    position: absolute;
+    cursor: pointer;
+}
+
+.passwdinklok_wrapper{
+    position: absolute;
+    top: 50%;
+    margin-left: 10px;
+}
+
+.passinklok{
+    background-color: black;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    margin: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
 

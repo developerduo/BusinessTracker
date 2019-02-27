@@ -18,7 +18,13 @@ function OnScroll() {
     }
 } 
 
+function InKlokken(){
+    document.getElementById("inklokscreen").style.opacity = 1;
+}
 
+function Closebtn(){
+    document.getElementById("inklokscreen").style.opacity = 0;
+}
 
 
 
