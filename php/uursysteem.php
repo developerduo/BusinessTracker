@@ -18,7 +18,6 @@ if(isset($_POST['klokin'])) {
     $wachtwoordcheck->bindParam(':username', $username);
     $wachtwoordcheck->bindParam(':password', $password);
     $wachtwoordcheck->execute();
-    echo 'test1';
     if($wachtwoordcheck->rowCount() > 0) {
     //Check of hij al is ingeklokt
     $stmt = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :ID");
@@ -26,18 +25,23 @@ if(isset($_POST['klokin'])) {
     $stmt->bindParam(':ID', $ID);
     $stmt->execute();
     $row = $stmt->fetch();
-    echo $row['datum'];
-    echo 'test2';
     //Dit doet hij als hij als is ingeklokt
     if($stmt->rowCount() > 0){
-        echo 'test3';
         $row = $stmt->fetch();
+        $check = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id");
+        $check->bindParam(':datum', $date);
+        $check->bindParam(':id', $ID);
+        $check->execute();
+        if($check->rowCount() > 0){
+            $row = $check->fetch();
+            if($row['tijdout'] > '00:00:00'){
+                $loginError = 'Je bent vandaag al ingeklokt en uitgeklokt';
+            }else{
         $update = $conn->prepare("UPDATE hoursystem SET tijdout = '$time' WHERE datum = :datum AND user_ID = :id");
         $update->bindParam(':datum', $date);
         $update->bindParam(':id', $ID);
-        $update->execute();
-        echo 'test3';   
-    } else{
+        $update->execute();}
+    } } else{
         
         //User is nog niet ingeklokt
         $insert = $conn->prepare("INSERT INTO hoursystem (datum, user_ID, tijdin) VALUES (:datum, :id, :tijd);");
@@ -84,6 +88,8 @@ catch(exception $E) {
        <button type="submit" name="klokin" class="submitinklok">Klok me in</button>
     </form>
 </div>
+
+<p><?= $loginError ?></p>
 
 
 
