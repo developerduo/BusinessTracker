@@ -26,5 +26,15 @@ function Closebtn(){
     document.getElementById("inklokscreen").style.opacity = 0;
 }
 
+function Totop() {
+    window.scrollTo(0,0);
+    console.log('top');
+}
+function Tomid() {
+    window.scrollTo(0,660);
+}
+function Tobottom() {
+    window.scrollTo(0,1500);
+}
 
 

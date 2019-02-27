@@ -6,50 +6,46 @@
     <title>BusinessTracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
-
-
+    <link rel='icon' href='../img/businesstracker logo test.png'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body onscroll="OnScroll()">
-    <header class="bovenkant" >
+    <header class="navbar">
             <nav id="top">
                 <div class="scroll" id="scroll">
-                    
                     <ul>
-                        <a onclick=''><li id="color1">BusinessTracker</li></a>
-                        <a onclick=''><li id="color2">About the Team</li></a>
-                        <a onclick=''><li id="color3">Contact</li></a>
+                        <a onclick='Totop()'><li id="color1">Home</li></a>
+                        <a onclick='Tomid()'><li id="color2">About the Team</li></a>
+                        <a onclick='Tobottom()'><li id="color3">Contact</li></a>
                     </ul>
 
                    <a href="../php/login.php"> <button type="button" name="loginbtn" class="loginbtn" id="loginbtn">Login</button></a>
                     
                 </div> 
             </nav>
-        
-            <h3 class="bg-text">BusinessTracker</h3>
-          
-        
-        
-        
-        
-
+            <div class="introText">
+                <p>Culpa sunt irure occaecat pariatur culpa ex mollit est exercitation ex non. Laborum est proident ullamco occaecat esse 
+                    ullamco et et est magna qui minim. Esse consectetur ipsum consequat enim ut ad officia 
+                    consequat eu deserunt duis velit. Sit ex elit fugiat magna proident magna enim nisi nulla consectetur. Occaecat ipsum 
+                    qui sunt sint. Tempor ullamco et amet quis Lorem exercitation duis nostrud sunt aliqua.</p><br>
+                <p class='optiesTitel'>Waar kan je de Business Tracker voor gebruiken?</p>
+                <ul class="opties">
+                    <li>Werkuren Bijhouden</li>
+                    <li>Werknemers kunnen zichzelf inklokken</li>
+                    <li>Elke werknemer een eigen login</li>
+                    <li>Automatisch loon berekenen</li>
+                </ul>
+            </div>
     </header>
 
-    <div class="midden" id='midden'>
-
-    
-
-       
-
+    <div class="midden" id='midden'>    
+        <h1>About the team</h1>
     </div>
 
     <div class="onderkant" id="bottom">
-
+        <h1>Contact</h1>
     </div>
-
-
-
-    <script src="../js/main.js"></script>
-    <script src="../js/time.js"></script>
+  
 </body>
+<script src="../js/main.js"></script>
 </html>

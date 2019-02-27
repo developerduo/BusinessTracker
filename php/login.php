@@ -1,4 +1,38 @@
 <?php
+require_once('config.php');
+session_start();
+
+$loginError = '';
+
+if(isset($_COOKIE['username'])) {
+    header("Location: ./main.php");
+}
+
+if(@$_POST['submitLogin']) {
+
+    try{
+    $email = $_POST['email'];
+    $password = md5($_POST['pwd']);
+    
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = :email AND password = :password");
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':password', $password);
+   
+    $stmt->execute();
+    if($stmt->rowCount() > 0) {
+        header("Location: ./main.php?LoggedIn");
+        $row = $stmt->fetch();
+        $firstname = $row['voornaam'];
+        setcookie("username", $firstname, time()+3600);
+    } else{
+        $loginError = "Username or Password incorrect!";
+    }
+
+}
+catch(exception $E) {
+    echo 'Er ging iets fout';
+}
+}
 
 ?>
 
@@ -17,9 +51,10 @@
  
  <form action method="POST" class="login_wrapper">
      <h1>Login</h1>
-  <input type="text" name="username" placeholder="Username" class="input">
+  <input type="text" name="email" placeholder="Username" class="input">
   <input type="password" name="pwd" placeholder="Password" class="input">
-  <input type="submit" name="submit" class="input" id="submit_btn" value="Login">
+  <input type="submit" name="submitLogin" class="input" id="submit_btn" value="Login">
+  <p id='loginError'><?= $loginError ?></p>
 </form>
 
 

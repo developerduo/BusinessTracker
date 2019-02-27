@@ -1,4 +1,10 @@
+<?php
 
+if(!isset($_COOKIE['username'])) {
+    header("Location: ./index.html");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +14,6 @@
     <title>Dashboard</title>
 </head>
 <body>
-    
+    <a href='logout.php'>Logout</a>
 </body>
 </html>
