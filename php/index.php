@@ -33,6 +33,7 @@ if(isset($_POST['acceptCookie'])) {
                 </div> 
             </nav>
             <div class="introText">
+                <p><b>Keep track of your business!</b></p><br>
                 <p>Culpa sunt irure occaecat pariatur culpa ex mollit est exercitation ex non. Laborum est proident ullamco occaecat esse 
                     ullamco et et est magna qui minim. Esse consectetur ipsum consequat enim ut ad officia 
                     consequat eu deserunt duis velit. Sit ex elit fugiat magna proident magna enim nisi nulla consectetur. Occaecat ipsum 
@@ -45,12 +46,13 @@ if(isset($_POST['acceptCookie'])) {
                     <li>Automatisch loon berekenen</li>
                 </ul>
             </div>
+            <div class="sidebar">
+                <img src="../img/businesstrackerManagePicture.png" alt="">
+            </div>
     </header>
 
     <div class="midden" id='midden'>    
-        <div class="middenBegin">
         <h1 class='abouttheteamTitle'>About the team</h1>
-        </div>
     </div>
 
     <div class="onderkant" id="bottom">
