@@ -2,6 +2,7 @@
 
 if(isset($_POST['acceptCookie'])) {
     setcookie("cookies", "true", time()+3600*24*365);
+    header('Location: ./index.php?Geaccepteerd');   
 }
 
 
@@ -47,7 +48,9 @@ if(isset($_POST['acceptCookie'])) {
     </header>
 
     <div class="midden" id='midden'>    
-        <h1>About the team</h1>
+        <div class="middenBegin">
+        <h1 class='abouttheteamTitle'>About the team</h1>
+        </div>
     </div>
 
     <div class="onderkant" id="bottom">

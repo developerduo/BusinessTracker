@@ -32,9 +32,9 @@ function Tobottom() {
 }
 function cookieCheck() {
     setTimeout(function() {
-    document.getElementById('cookieCheck').style.height = '80px';
-    }, 1000);
+    document.getElementById('cookieCheck').style.display = 'block';
+    }, 3000);
 }
 function closeCookie() {
-    document.getElementById('cookieCheck').style.height = '0';
+    document.getElementById('cookieCheck').style.display = 'none';
 }
