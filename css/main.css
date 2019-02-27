@@ -46,6 +46,22 @@ html {
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
 }
 
+.submitinklok{
+    width: 100px;
+    cursor: pointer;
+    background-color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: black;
+    margin: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+    position: absolute;
+    left: 75%;
+    top: 70%;
+}
+
 .midden {
     height: 700px;
     max-width: 100%;
@@ -176,38 +192,56 @@ ul li {
 #inklokscreen{
     opacity: 0;
     border: 0px solid transparent;
-    height: 400px;
-    width: 700px;
-    background-color: white;
+    height: 200px;
+    width: 500px;
+    background-color: rgb(255, 255, 255, 0.7);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.1s all ease-in-out;
+    border-radius: 5px;
     
 }
 
 .closebtn{
-    left: 96%;
     position: absolute;
     cursor: pointer;
+    font-size: 30px;
+    top: 6px;
+    right: 10px;
+}
+
+.naaminklok{
+    font-family: sans-serif;
+    font-size: 17.5px;
+    padding: 10px;
 }
 
 .passwdinklok_wrapper{
     position: absolute;
     top: 50%;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .passinklok{
-    background-color: black;
+    background-color: white;
     padding: 10px;
     border: none;
     outline: none;
-    color: white;
+    color: black;
     margin: 3px;
     font-size: 15px;
     border-radius: 10px;
 }
 
+.boventekst{
+    font-family: sans-serif;
+    font-size: 30px;
+    padding: 10px;
+}
 
+
+::placeholder{
+    color: black;
+}

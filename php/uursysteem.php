@@ -28,12 +28,13 @@ if(isset($_COOKIE['username'])){
    <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
 
    <div id="inklokscreen">
+      <form method="POST"> 
        <a onclick="Closebtn()" class="closebtn"><i class="fas fa-times"></i></a>
        <div class="boventekst">Inklokken</div>
-       <div class="naaminklok"></div>
+       <div class="naaminklok">Damian</div>
        <div class="passwdinklok_wrapper"><input type="password" name="passwdinklok" class="passinklok" placeholder="Wachtwoord"></div>
-
-
+       <button type="submit" name="submitinklok" class="submitinklok">Klok me in</button>
+    </form>
 </div>
 
 
