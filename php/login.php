@@ -23,7 +23,9 @@ if(isset($_POST['submitLogin'])) {
         header("Location: ./main.php?LoggedIn");
         $row = $stmt->fetch();
         $firstname = $row['voornaam'];
+        $id = $row['ID'];
         setcookie("username", $firstname, time()+3600);
+        setcookie("id", $id, time()+3600);
     } else{
         $loginError = "Username or Password incorrect!";
     }

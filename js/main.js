@@ -19,14 +19,17 @@ function OnScroll() {
 } 
 
 function Totop() {
-    window.scrollTo(0,0);
-    console.log('top');
+    var elmnt = document.getElementById("top");
+    elmnt.scrollIntoView();
 }
 function Tomid() {
-    window.scrollTo(0,660);
+    var elmnt = document.getElementById("midden");
+    elmnt.scrollIntoView();
 }
 function Tobottom() {
-    window.scrollTo(0,1500);
+    var elmnt = document.getElementById("bottom");
+    elmnt.scrollIntoView();
 }
-
-
+function cookieCheck() {
+    
+}

@@ -1,3 +1,11 @@
+<?php 
+
+if(isset($_POST['acceptCookie'])) {
+    setcookie("cookies", "true", time()+3600*24*365);
+}
+
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,6 +53,14 @@
     <div class="onderkant" id="bottom">
         <h1>Contact</h1>
     </div>
+    <?php if(!isset($_COOKIE['cookies'])) : ?>
+    <div class='cookieCheck'>
+        <p>Wij maken gebruik van cookies</p>
+        <form id='cookieBtn' action="" method="POST">
+            <input type="submit" value="Accepteren" name='acceptCookie'>
+        </form>
+    </div>
+<?php endif; ?>
   
 </body>
 <script src="../js/main.js"></script>
