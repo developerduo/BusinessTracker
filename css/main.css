@@ -138,4 +138,19 @@ ul li {
     color: white;
     margin-left: 5px;
 }
-
+.introText{
+    position: absolute;
+    left: 20px;
+    top: 100px;
+    width: 500px;
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.opties li{
+    display: list-item;
+}
+.optiesTitel{
+    font-weight: 600;
+}
