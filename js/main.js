@@ -31,5 +31,10 @@ function Tobottom() {
     elmnt.scrollIntoView();
 }
 function cookieCheck() {
-    
+    setTimeout(function() {
+    document.getElementById('cookieCheck').style.height = '80px';
+    }, 1000);
+}
+function closeCookie() {
+    document.getElementById('cookieCheck').style.height = '0';
 }

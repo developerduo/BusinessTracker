@@ -17,7 +17,7 @@ if(isset($_POST['acceptCookie'])) {
     <link rel='icon' href='../img/businesstracker logo test.png'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
-<body onscroll="OnScroll()">
+<body onscroll="OnScroll()" onload='cookieCheck()'>
     <header class="navbar">
             <nav id="top">
                 <div class="scroll" id="scroll">
@@ -54,10 +54,10 @@ if(isset($_POST['acceptCookie'])) {
         <h1>Contact</h1>
     </div>
     <?php if(!isset($_COOKIE['cookies'])) : ?>
-    <div class='cookieCheck'>
+    <div class='cookieCheck' id='cookieCheck'>
         <p>Wij maken gebruik van cookies</p>
         <form id='cookieBtn' action="" method="POST">
-            <input type="submit" value="Accepteren" name='acceptCookie'>
+            <input onclick='closeCookie()' type="submit" value="Accepteren" name='acceptCookie'>
         </form>
     </div>
 <?php endif; ?>
