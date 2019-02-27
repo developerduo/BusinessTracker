@@ -1,6 +1,5 @@
 <?php
 
-$time = date("H:i:s") ;
 require_once('config.php');
 
 session_start();
@@ -18,16 +17,26 @@ if(isset($_POST['klokin'])) {
     try{
     $username = $_COOKIE['username'];
     $password = md5($_POST['pwd']);
+    $date = date("d:m:Y");
+    $time = date("H:i:s") ;
     
     $stmt = $conn->prepare("SELECT * FROM users WHERE voornaam = '$username' AND password = :password");
     $stmt->bindParam(':password', $password);
    
     $stmt->execute();
     if($stmt->rowCount() > 0) {
-        header("Location: ./uursysteem.php?LoggedIn");
-        echo 'YOU MADE IT BOII';
+        
+        
+        $row = $stmt->fetch();
+        $ID = $row['ID'];
+        $insert = $conn->prepare("INSERT INTO hoursystem (date, user_ID, tijdin) VALUES (:datum, :id, :tijd);");
+        $insert->bindParam(':datum', $date);
+        $insert->bindParam(':id', $ID);
+        $insert->bindParam(':tijd', $time);
+        $result = $insert->execute();
+
     } else{
-        $loginError = "Username or Password incorrect!";
+        $loginError = "Password incorrect!";
     }
 
 }
@@ -36,8 +45,8 @@ catch(exception $E) {
 }
 }
 
-echo $time;
-echo $loginError;
+
+
 ?>
 
 
