@@ -1,11 +1,42 @@
 <?php
 
-/*
-if(isset($_COOKIE['username'])){
-    header('Location: ./index.html');
-} 
-*/
+$time = date("H:i:s") ;
+require_once('config.php');
 
+session_start();
+
+$loginError = '';
+
+
+if(!isset($_COOKIE['username'])) {
+    header("Location: ./login.php");
+}
+
+if(@$_POST['klokin']) {
+
+    try{
+    $username = $_COOKIE['username'];
+    $password = md5($_POST['pwd']);
+    
+    $stmt = $conn->prepare("SELECT * FROM users WHERE voornaam = '$username' AND password = :password");
+    $stmt->bindParam(':password', $password);
+   
+    $stmt->execute();
+    if($stmt->rowCount() > 0) {
+        header("Location: ./uursysteem.php?LoggedIn");
+        echo 'YOU MADE IT BOII';
+    } else{
+        $loginError = "Username or Password incorrect!";
+    }
+
+}
+catch(exception $E) {
+    echo 'Er ging iets fout';
+}
+}
+
+echo $time;
+echo $loginError;
 ?>
 
 
@@ -28,12 +59,12 @@ if(isset($_COOKIE['username'])){
    <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
 
    <div id="inklokscreen">
-      <form method="POST"> 
+      <form method="POST" action=''> 
        <a onclick="Closebtn()" class="closebtn"><i class="fas fa-times"></i></a>
        <div class="boventekst">Inklokken</div>
-       <div class="naaminklok">Damian</div>
-       <div class="passwdinklok_wrapper"><input type="password" name="passwdinklok" class="passinklok" placeholder="Wachtwoord"></div>
-       <button type="submit" name="submitinklok" class="submitinklok">Klok me in</button>
+       <div class="naaminklok"><?= $_COOKIE['username'] ?></div>
+       <div class="passwdinklok_wrapper"><input type="password" name="pwd" class="passinklok" placeholder="Wachtwoord"></div>
+       <button type="submit" name="klokin" class="submitinklok">Klok me in</button>
     </form>
 </div>
 

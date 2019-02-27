@@ -235,6 +235,7 @@ ul li {
 
 ::placeholder{
     color: black;
+}
 #loginError{
     color: white;
     margin-left: 5px;
