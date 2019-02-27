@@ -1,18 +1,11 @@
+
 <?php
-
 require_once('config.php');
-
 session_start();
-
 $loginError = '';
-
-
 if(!isset($_COOKIE['username'])) {
     header("Location: ./login.php");
 }
-
-
-
 if(isset($_POST['klokin'])) {
     try{
     $username = $_COOKIE['username'];
@@ -20,38 +13,30 @@ if(isset($_POST['klokin'])) {
     $password = md5($_POST['pwd']);
     $date = date("d:m:Y");
     $time = date("H:i:s") ;
-
     //Check of wachtwoord klopt
     $wachtwoordcheck = $conn->prepare("SELECT * FROM users WHERE voornaam = :username AND password = :password");
     $wachtwoordcheck->bindParam(':username', $username);
     $wachtwoordcheck->bindParam(':password', $password);
     $wachtwoordcheck->execute();
+    echo 'test1';
     if($wachtwoordcheck->rowCount() > 0) {
-
     //Check of hij al is ingeklokt
     $stmt = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :ID");
     $stmt->bindParam(':datum', $date);
     $stmt->bindParam(':ID', $ID);
     $stmt->execute();
     $row = $stmt->fetch();
+    echo $row['datum'];
+    echo 'test2';
     //Dit doet hij als hij als is ingeklokt
     if($stmt->rowCount() > 0){
-        $check = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :ID");
-        $check->bindParam(':datum', $date);
-        $check->bindParam(':ID', $ID);
-        $check->execute(); 
-        if($check->rowCount() > 0) {
-            $row = $check->fetch(); 
-            echo 'test1';
-            echo $row['tijdout'];
-            if($row['tijdout'] > '00:00:00') {
-                $loginError = "Je bent vandaag al ingeklokt en uitgeklokt";
-            } else {
+        echo 'test3';
+        $row = $stmt->fetch();
         $update = $conn->prepare("UPDATE hoursystem SET tijdout = '$time' WHERE datum = :datum AND user_ID = :id");
         $update->bindParam(':datum', $date);
         $update->bindParam(':id', $ID);
         $update->execute();
-        }
+        echo 'test3';   
     } else{
         
         //User is nog niet ingeklokt
@@ -60,20 +45,13 @@ if(isset($_POST['klokin'])) {
         $insert->bindParam(':id', $ID);
         $insert->bindParam(':tijd', $time);
         $result = $insert->execute(); 
-
     }
 }
-
-
 }
-    }
 catch(exception $E) {
     echo 'Er ging iets fout';
 }
 }
-
-
-
 ?>
 
 
@@ -104,11 +82,9 @@ catch(exception $E) {
        <div class="naaminklok"><?= $_COOKIE['username'] ?></div>
        <div class="passwdinklok_wrapper"><input type="password" name="pwd" class="passinklok" placeholder="Wachtwoord"></div>
        <button type="submit" name="klokin" class="submitinklok">Klok me in</button>
-       
     </form>
-    
 </div>
-<p><?= $loginError ?></p>
+
 
 
 <script src="../js/main.js"></script>
