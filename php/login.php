@@ -8,7 +8,7 @@ if(isset($_COOKIE['username'])) {
     header("Location: ./main.php");
 }
 
-if(@$_POST['submitLogin']) {
+if(isset($_POST['submitLogin'])) {
 
     try{
     $email = $_POST['email'];
