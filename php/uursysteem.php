@@ -32,6 +32,7 @@ if(isset($_POST['klokin'])) {
         $check->bindParam(':datum', $date);
         $check->bindParam(':id', $ID);
         $check->execute();
+         // Hij checkt of je al je bent ingeklokt en uitgeklokt
         if($check->rowCount() > 0){
             $row = $check->fetch();
             if($row['tijdout'] > '00:00:00'){
@@ -56,6 +57,22 @@ catch(exception $E) {
     echo 'Er ging iets fout';
 }
 }
+
+    $username = $_COOKIE['username'];
+    $ID = $_COOKIE['id'];
+    $date = date("d:m:Y");
+    $time = date("H:i:s") ;
+    
+    $totaletijd = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id ");
+    $totaletijd->bindParam(':datum', $date);
+    $totaletijd->bindParam(':id', $ID);
+    $totaletijd->execute();
+    $row2 = $totaletijd->fetch();
+    $tijdin = $row2['tijdin'];
+    $tijdout = $row2['tijdout'];
+    echo $tijdin. '<br> '. $tijdout. '<br>' ;
+    $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60;
+    echo $uren;
 ?>
 
 
