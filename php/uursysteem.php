@@ -16,28 +16,47 @@ if(!isset($_COOKIE['username'])) {
 if(isset($_POST['klokin'])) {
     try{
     $username = $_COOKIE['username'];
+    $ID = $_COOKIE['id'];
     $password = md5($_POST['pwd']);
     $date = date("d:m:Y");
     $time = date("H:i:s") ;
-    
-    $stmt = $conn->prepare("SELECT * FROM users WHERE voornaam = '$username' AND password = :password");
-    $stmt->bindParam(':password', $password);
-   
+
+    //Check of wachtwoord klopt
+    $wachtwoordcheck = $conn->prepare("SELECT * FROM users WHERE voornaam = :username AND password = :password");
+    $wachtwoordcheck->bindParam(':username', $username);
+    $wachtwoordcheck->bindParam(':password', $password);
+    $wachtwoordcheck->execute();
+    echo 'test1';
+    if($wachtwoordcheck->rowCount() > 0) {
+
+    //Check of hij al is ingeklokt
+    $stmt = $conn->prepare("SELECT * FROM hoursystem WHERE datum = ':datum' AND user_ID = ':ID'");
+    $stmt->bindParam(':datum', $date);
+    $stmt->bindParam(':ID', $ID);
     $stmt->execute();
-    if($stmt->rowCount() > 0) {
-        
-        
+    $row = $stmt->fetch();
+    echo $row['datum'];
+    echo 'test2';
+    //Dit doet hij als hij als is ingeklokt
+    if($stmt->rowCount() > 0){
+        echo 'test3';
         $row = $stmt->fetch();
-        $ID = $row['ID'];
-        $insert = $conn->prepare("INSERT INTO hoursystem (date, user_ID, tijdin) VALUES (:datum, :id, :tijd);");
+        $update = $conn->prepare("UPDATE hoursystem SET tijdout = '$time' WHERE datum = ':datum' AND user_ID = ':id'");
+        $update->bindParam(':datum', $date);
+        $update->bindParam(':id', $ID);
+        $update->execute();
+        echo 'test3';   
+    } else{
+        
+        //User is nog niet ingeklokt
+        $insert = $conn->prepare("INSERT INTO hoursystem (datum, user_ID, tijdin) VALUES (:datum, :id, :tijd);");
         $insert->bindParam(':datum', $date);
         $insert->bindParam(':id', $ID);
         $insert->bindParam(':tijd', $time);
-        $result = $insert->execute();
+        $result = $insert->execute(); 
 
-    } else{
-        $loginError = "Password incorrect!";
     }
+}
 
 }
 catch(exception $E) {
@@ -64,9 +83,11 @@ catch(exception $E) {
 </head>
 <body class="bovenkant_uur">
   
-
+     
   
    <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
+
+   <a href="logout.php">Logout</a>
 
    <div id="inklokscreen">
    <form method="POST" action=''> 
