@@ -12,8 +12,9 @@ if(!isset($_COOKIE['username'])) {
     header("Location: ./login.php");
 }
 
-if(@$_POST['klokin']) {
 
+
+if(isset($_POST['klokin'])) {
     try{
     $username = $_COOKIE['username'];
     $password = md5($_POST['pwd']);
@@ -59,7 +60,7 @@ echo $loginError;
    <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
 
    <div id="inklokscreen">
-      <form method="POST" action=''> 
+   <form method="POST" action=''> 
        <a onclick="Closebtn()" class="closebtn"><i class="fas fa-times"></i></a>
        <div class="boventekst">Inklokken</div>
        <div class="naaminklok"><?= $_COOKIE['username'] ?></div>
