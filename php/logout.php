@@ -1,5 +1,3 @@
 <?php
-
-session_start();
-session_destroy();
-header("Location: ./index.html");
+setcookie("username", $firstname, time()+0);
+header("Location: ./index.html");   

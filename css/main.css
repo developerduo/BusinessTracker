@@ -17,22 +17,16 @@ html {
 
 
 }
-
 .midden {
     height: 700px;
     max-width: 100%;
     background-color: rgb(80, 80, 80)
 }
-
 .onderkant {
     height: 500px;
     max-width: 100%;
     background-color: rgb(90, 90, 90);
 }
-
-
-
-
 a {
 
     font-weight: bold;
@@ -40,28 +34,16 @@ a {
     font-size: 23px;
     opacity: 1;
 }
-
 ul {
     display: inline-block;
     text-decoration: none;
 }
-
 ul li {
     margin-left: 20px;
     display: inline;
     top: 5px;
     transition: all 0.5s ease-in-out;
-
-
 }
-
-
-
-
-
-
-
-
 .scroll {
     position: fixed;
     opacity: 1;
@@ -143,5 +125,9 @@ ul li {
     margin: 3px;
     font-size: 15px;
     border-radius: 10px;
+}
+#loginError{
+    color: white;
+    margin-left: 5px;
 }
 
