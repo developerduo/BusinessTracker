@@ -47,7 +47,7 @@ ul {
 }
 ul li {
     display: inline;
-    margin-left: 10px;
+    margin-left: 20px;
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 
@@ -140,7 +140,7 @@ ul li {
 }
 .introText{
     position: absolute;
-    left: 20px;
+    left: 10px;
     top: 100px;
     width: 500px;
     font-size: 18px;

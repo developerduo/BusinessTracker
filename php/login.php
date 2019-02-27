@@ -51,8 +51,8 @@ catch(exception $E) {
  
  <form action method="POST" class="login_wrapper">
      <h1>Login</h1>
-  <input type="text" name="email" placeholder="Username" class="input">
-  <input type="password" name="pwd" placeholder="Password" class="input">
+  <input type="text" name="email" placeholder="Gebruikersnaam" class="input">
+  <input type="password" name="pwd" placeholder="Wachtwoord" class="input">
   <input type="submit" name="submitLogin" class="input" id="submit_btn" value="Login">
   <p id='loginError'><?= $loginError ?></p>
 </form>
