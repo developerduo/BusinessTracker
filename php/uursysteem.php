@@ -30,7 +30,7 @@ if(isset($_POST['klokin'])) {
     if($wachtwoordcheck->rowCount() > 0) {
 
     //Check of hij al is ingeklokt
-    $stmt = $conn->prepare("SELECT * FROM hoursystem WHERE datum = ':datum' AND user_ID = ':ID'");
+    $stmt = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :ID");
     $stmt->bindParam(':datum', $date);
     $stmt->bindParam(':ID', $ID);
     $stmt->execute();
@@ -41,7 +41,7 @@ if(isset($_POST['klokin'])) {
     if($stmt->rowCount() > 0){
         echo 'test3';
         $row = $stmt->fetch();
-        $update = $conn->prepare("UPDATE hoursystem SET tijdout = '$time' WHERE datum = ':datum' AND user_ID = ':id'");
+        $update = $conn->prepare("UPDATE hoursystem SET tijdout = '$time' WHERE datum = :datum AND user_ID = :id");
         $update->bindParam(':datum', $date);
         $update->bindParam(':id', $ID);
         $update->execute();
