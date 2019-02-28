@@ -18,6 +18,12 @@ if(!isset($_COOKIE['username'])) {
     <h1>Dashboard</h1>
 </header>
 <body class='MainBody'>
-    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
+    <a href="agenda.php">Agenda</a>
+    <a href="logout.php">Logout</a>
 </body>
 </html>
