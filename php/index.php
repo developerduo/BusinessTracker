@@ -24,7 +24,7 @@ if(isset($_POST['acceptCookie'])) {
                 <div class="scroll" id="scroll">
                     <ul>
                         <a onclick='Totop()'><li id="color1">Home</li></a>
-                        <a onclick='Tomid()'><li id="color2">About the Team</li></a>
+                        <a onclick='Tomid()'><li id="color2">Over ons</li></a>
                         <a onclick='Tobottom()'><li id="color3">Contact</li></a>
                     </ul>
 
@@ -52,7 +52,7 @@ if(isset($_POST['acceptCookie'])) {
     </header>
 
     <div class="midden" id='midden'>    
-        <h1 class='abouttheteamTitle'>About the team</h1>
+        <h1 class='abouttheteamTitle'>Over ons</h1>
     </div>
 
     <div class="onderkant" id="bottom">

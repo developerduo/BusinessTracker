@@ -81,7 +81,9 @@ ul li {
     outline: none;
     width: 100px;
     height: 40px;
-    background-color: transparent;
+    background-color: grey;
+    outline: none;
+    border: none;
     color: white;
     font-weight: bold;
     font-size: 20px;
@@ -90,10 +92,6 @@ ul li {
     right: 20px;
     transition: all 0.5s ease-in-out;
     text-align: center;
-}
-
-.loginbtn:hover{
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 #submit_btn{
     width: 75px;
@@ -186,4 +184,16 @@ ul li {
     width: 750px;
     margin-top: 100px;
     margin-left: 100px;
+}
+.DashboardHeader{
+    font-family: sans-serif;
+    height: 100px;
+    width: 100%;
+    position: fixed;
+}
+.DashboardHeader h1{
+    margin: 20px;
+}
+.MainBody{
+    background-color: white;
 }
