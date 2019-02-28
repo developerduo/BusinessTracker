@@ -155,9 +155,10 @@ switch($maand) {
                     $tot = $timetotArray[1] . ':' . $timetotArray[1];
                     echo $result['naam'];
                     echo '<br>';
-                    echo $vanaf . ' - ' . $tot;
+                    echo $vanaf . ' - ' . $tot;                                                                                                                                   
                     } 
                 }
+                
                 while($row = $stmt->fetch()) { 
                     $ID = $row['ID'];  ?>
                 <tr>
@@ -177,13 +178,15 @@ switch($maand) {
                     <td><?php 
                     werkcheck($zondag, $ID); ?></td>
                 </tr>
-                
             <?php } ?>
-                
-
-
             </tbody>
         </table>
+        <?php 
+        
+
+
+?>      
+       
     </div>
 </body>
 </html>
