@@ -122,11 +122,12 @@ if(isset($_GET['aluitgeklokt'])){
 </head>
 <body class="bovenkant_uur">
   
-     
-  
-   <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
 
-   <a href="logout.php">Logout</a>
+  
+
+   <h3 class="Dashboard">Dashboard Uren</h3>
+
+   <!--<a href="logout.php">Logout</a> -->
 
    <div id="inklokscreen">
    <form method="POST" action=''> 
@@ -138,13 +139,23 @@ if(isset($_GET['aluitgeklokt'])){
     </form>
 </div>
 
- /* <p><?= $loginError ?></p>
+ <!-- <p><?= $loginError ?></p>
 <p><?= $tijdin ?></p>
 <p><?= $tijdout ?></p>
-<p><?= $uren . ' ' .$tussentekst . ' en ' . $decimal . ' ' . $tussendecimal ?> </p> */
+<p><?= $uren . ' ' .$tussentekst . ' en ' . $decimal . ' ' . $tussendecimal ?> </p> -->
+
+   <div class="urenscherm">
+       <h3 class="Teksturen">Uren Overzicht</h3>
+       <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
+
+       <div class="urenschermpje">
+
+       </div>
+   </div>
 
 
 
 <script src="../js/main.js"></script>
 </body>
 </html>
+
