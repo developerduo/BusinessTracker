@@ -43,12 +43,13 @@ if(isset($_POST['klokin'])) {
         if($check->rowCount() > 0){
             $row = $check->fetch();
             if($row['tijdout'] > '00:00:00'){
-                $loginError = 'Je bent vandaag al ingeklokt en uitgeklokt';
+                header('Location: ./uursysteem.php?aluitgeklokt');
             }else{
         $update = $conn->prepare("UPDATE hoursystem SET tijdout = '$time' WHERE datum = :datum AND user_ID = :id");
         $update->bindParam(':datum', $date);
         $update->bindParam(':id', $ID);
-        $update->execute();}
+        $update->execute();
+        header('Location: ./uursysteem.php?uitgeklokt');}
     } } else{
         
         //User is nog niet ingeklokt
@@ -56,7 +57,8 @@ if(isset($_POST['klokin'])) {
         $insert->bindParam(':datum', $date);
         $insert->bindParam(':id', $ID);
         $insert->bindParam(':tijd', $time);
-        $result = $insert->execute(); 
+        $result = $insert->execute();
+        header('Location: ./uursysteem.php?ingeklokt');
     }
 }else{
     $loginError = 'Je wachtwoord is verkeerd';
@@ -65,6 +67,10 @@ if(isset($_POST['klokin'])) {
 catch(exception $E) {
     echo 'Er ging iets fout';
 }
+}
+
+if(isset($_GET['aluitgeklokt'])){
+    $loginError = 'Je bent vandaag al ingeklokt en uitgeklokt';
 }
     
     $totaletijd = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id ");
@@ -76,24 +82,17 @@ catch(exception $E) {
     $tijdout = $row2['tijdout'];
     if($tijdout == '00:00:00'){
         $uren = 0;
+        $tijdoutc = '';
     }
     elseif($tijdout > '00:00:00'){
         $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60;
         list($whole, $decimal) = explode('.', $uren);
         $decimal = 0 . '.' . $decimal;
         $decimal = $decimal * 60;
-        list($nodig, $decimal) = explode('.', $decimal);
-        $uren = $whole . ':' . $nodig;
-        $whole = $whole / 60;
-        list($uur,$minuten ) = explode('.', $whole);
-        $minuten = $minuten * 60;
-        $uren = $uur. ':' . $minuten. ':' . $nodig;
+        $tijdoutc = $tijdout;
     }
-    echo $tijdin. '<br> '. $tijdout. '<br>' ;
-    echo $uren . '<br>';
-    echo $uur . '<br>';
-    echo $minuten . '<br>';
-    echo $whole . '<br>';
+
+
     
 ?>
 
@@ -129,6 +128,8 @@ catch(exception $E) {
 </div>
 
 <p><?= $loginError ?></p>
+<p><?= $tijdin ?></p>
+<p><?= $tijdoutc ?></p>
 
 
 
