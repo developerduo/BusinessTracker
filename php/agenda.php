@@ -21,8 +21,7 @@ $week_donderdag = new DateTime();
 $week_vrijdag = new DateTime();
 $week_zaterdag = new DateTime();
 $week_zondag = new DateTime();
-$maand = new DateTime();
-$maand->setISODate($year, $weeknummer);
+
 $week_maandag->setISODate($year,$weeknummer);
 $maandag = $week_maandag->format('d:m:Y');
 $week_dinsdag->setISODate($year, $weeknummer);
@@ -44,6 +43,48 @@ $week_zondag->setISODate($year, $weeknummer);
 $week_zondag->modify('+6 days');
 $zondag = $week_zondag->format('d:m:Y');
 
+$maand = new DateTime();
+$maand->setISODate($year, $weeknummer);
+$maand = $maand->format('n');
+
+switch($maand) {
+    case 1:
+        $maand = 'januari';
+        break;
+    case 2:
+        $maand = 'februari';
+        break;
+    case 3:
+        $maand = 'maart';
+        break;
+    case 4:
+        $maand = 'april';
+        break;
+    case 5:
+        $maand = 'mei';
+        break;
+    case 6: 
+        $maand = 'juni';
+        break;
+    case 7: 
+        $maand = 'juli';
+        break;
+    case 8:
+        $maand = 'augustus';
+        break;
+    case 9:
+        $maand = 'september';
+        break;
+    case 10: 
+        $maand = 'oktober';
+    case 11:
+        $maand = 'november';
+        break;
+    case 12: 
+        $maand = 'december';
+        break;
+} 
+   
 
 ?>
 
@@ -61,6 +102,9 @@ $zondag = $week_zondag->format('d:m:Y');
     <div class="agendaWrapper">
         <table align='left' class='agendaTable'>
             <thead>
+                <tr>
+                    <th align='left'><?= $maand ?></th>
+                </tr>
                 <tr>
                     <th align='left'>Week: <?= $weeknummer ?></th>
                 </tr>
@@ -80,40 +124,37 @@ $zondag = $week_zondag->format('d:m:Y');
                 $stmt = $conn->prepare("SELECT * FROM users");
                 $stmt->execute();
 
-                function werkcheck($dag, $ID) {
+                function werkcheck($dag, $ID, $result) {
                     include 'config.php';
-                    echo $dag;
-                    $stmt = $conn->prepare("SELECT * FROM agenda WHERE datum = :dag AND user_ID = :ID");
-                    $stmt->bindParam(':dag', $dag);
-                    $stmt->bindParam(':ID', $ID);
+                    $stmt = $conn->prepare("SELECT * FROM agenda WHERE datum = '25:02:2019' AND user_ID = '2'");
                     $stmt->execute();
                     $result = $stmt->fetch(PDO::FETCH_ASSOC);
-                    global $result;
                 }
+                $result = '';
                 while($row = $stmt->fetch()) { 
                     $ID = $row['ID']; ?>
                 <tr>
                     <td><?= $row['voornaam'] ?></td>
                     <td><?php 
-                    werkcheck($maandag, $ID);  ?>
+                    werkcheck($maandag, $ID, $result);  ?>
                     <?= $result['naam'] ?></td>
                     <td><?php 
-                    werkcheck($dinsdag, $ID); ?>
+                    werkcheck($dinsdag, $ID, $result); ?>
                     <?= $result['naam'] ?></td>
                     <td><?php 
-                    werkcheck($woensdag, $ID); ?>
+                    werkcheck($woensdag, $ID, $result); ?>
                     <?= $result['naam'] ?></td>
                     <td><?php 
-                    werkcheck($donderdag, $ID); ?>
+                    werkcheck($donderdag, $ID, $result); ?>
                     <?= $result['naam'] ?></td>
                     <td><?php 
-                    werkcheck($vrijdag, $ID); ?>
+                    werkcheck($vrijdag, $ID, $result); ?>
                     <?= $result['naam'] ?></td>
                     <td><?php 
-                    werkcheck($zatedag, $ID); ?>
+                    werkcheck($zatedag, $ID, $result); ?>
                     <?= $result['naam'] ?></td>
                     <td><?php 
-                    werkcheck($zondag, $ID); ?>
+                    werkcheck($zondag, $ID, $result); ?>
                     <?= $result['naam'] ?></td>
                 </tr>
                 
