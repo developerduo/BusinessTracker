@@ -11,7 +11,21 @@ $ID = $_COOKIE['id'];
 $year = date("Y");
 $ddate = date("Y-m-d");
 $date = new DateTime($ddate);
+$currentweeknummer = $date->format("W");
 $weeknummer = $date->format("W");
+
+if(isset($_POST['nextweek'])) {
+    $weeknummer = $_POST['week'] + 1;
+    if($weeknummer < 10) {
+        $weeknummer = '0' . $weeknummer;
+    }
+}
+if(isset($_POST['previousweek'])) {
+    $weeknummer = $_POST['week'] - 1; 
+    if($weeknummer < 10) {
+    $weeknummer = '0' . $weeknummer;
+    }
+}
 
 //Assign de datum aan de variables per dag dat hoord bij de week
 $week_maandag = new DateTime();
@@ -82,9 +96,8 @@ switch($maand) {
         break;
     case 12: 
         $maand = 'december';
-        break;
-} 
-   
+        breal;
+}
 
 ?>
 
@@ -109,6 +122,10 @@ switch($maand) {
                     <th align='left'>Week: <?= $weeknummer ?></th>
                 </tr>
                 <tr>
+                    <th><form action="" method='post'><input value="Vorige week" type="submit" name='previousweek'><input type="hidden" name='week' value='<?= $weeknummer ?>'></form></th>
+                    <th><form action="" method='post'><input value='Volgende week' type="submit" name='nextweek'><input type="hidden" name='week' value='<?= $weeknummer ?>'></form></th>
+                </tr>
+                <tr>
                     <th>Medewerkers:</th>
                     <th>Maandag</th>
                     <th>Dinsdag</th>
@@ -124,38 +141,37 @@ switch($maand) {
                 $stmt = $conn->prepare("SELECT * FROM users");
                 $stmt->execute();
 
-                function werkcheck($dag, $ID, $result) {
+                function werkcheck($dag, $ID) {
                     include 'config.php';
-                    $stmt = $conn->prepare("SELECT * FROM agenda WHERE datum = '25:02:2019' AND user_ID = '2'");
+                    $stmt = $conn->prepare("SELECT * FROM agenda WHERE datum = :datum AND user_ID = :ID");
+                    $stmt->bindParam(':datum', $dag);
+                    $stmt->bindParam(':ID', $ID);
                     $stmt->execute();
                     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                    if($stmt->rowCount() > 0) {
+                    echo $result['naam'];
+                    echo '<br>';
+                    echo $result['vanaf'] . ' - ' . $result['tot'];
+                    } 
                 }
-                $result = '';
                 while($row = $stmt->fetch()) { 
-                    $ID = $row['ID']; ?>
+                    $ID = $row['ID'];  ?>
                 <tr>
                     <td><?= $row['voornaam'] ?></td>
                     <td><?php 
-                    werkcheck($maandag, $ID, $result);  ?>
-                    <?= $result['naam'] ?></td>
+                    $result = werkcheck($maandag, $ID);  ?></td>
                     <td><?php 
-                    werkcheck($dinsdag, $ID, $result); ?>
-                    <?= $result['naam'] ?></td>
+                    werkcheck($dinsdag, $ID); ?></td>
                     <td><?php 
-                    werkcheck($woensdag, $ID, $result); ?>
-                    <?= $result['naam'] ?></td>
+                    werkcheck($woensdag, $ID); ?></td>
                     <td><?php 
-                    werkcheck($donderdag, $ID, $result); ?>
-                    <?= $result['naam'] ?></td>
+                    werkcheck($donderdag, $ID); ?></td>
                     <td><?php 
-                    werkcheck($vrijdag, $ID, $result); ?>
-                    <?= $result['naam'] ?></td>
+                    werkcheck($vrijdag, $ID); ?></td>
                     <td><?php 
-                    werkcheck($zatedag, $ID, $result); ?>
-                    <?= $result['naam'] ?></td>
+                    werkcheck($zatedag, $ID); ?></td>
                     <td><?php 
-                    werkcheck($zondag, $ID, $result); ?>
-                    <?= $result['naam'] ?></td>
+                    werkcheck($zondag, $ID); ?></td>
                 </tr>
                 
             <?php } ?>
