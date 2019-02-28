@@ -8,6 +8,10 @@ $loginError = '';
     $ID = $_COOKIE['id'];
     $date = date("d:m:Y");
     $time = date("H:i:s") ;
+    $uren = '';
+    $uur = '';
+    $minuten = '';
+    $whole = '';
 if(!isset($_COOKIE['username'])) {
     header("Location: ./login.php");
 }
@@ -54,12 +58,15 @@ if(isset($_POST['klokin'])) {
         $insert->bindParam(':tijd', $time);
         $result = $insert->execute(); 
     }
+}else{
+    $loginError = 'Je wachtwoord is verkeerd';
 }
 }
 catch(exception $E) {
     echo 'Er ging iets fout';
 }
 }
+    
     $totaletijd = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id ");
     $totaletijd->bindParam(':datum', $date);
     $totaletijd->bindParam(':id', $ID);
@@ -69,12 +76,25 @@ catch(exception $E) {
     $tijdout = $row2['tijdout'];
     if($tijdout == '00:00:00'){
         $uren = 0;
-    }else{
-        $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60;
     }
-
+    elseif($tijdout > '00:00:00'){
+        $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60;
+        list($whole, $decimal) = explode('.', $uren);
+        $decimal = 0 . '.' . $decimal;
+        $decimal = $decimal * 60;
+        list($nodig, $decimal) = explode('.', $decimal);
+        $uren = $whole . ':' . $nodig;
+        $whole = $whole / 60;
+        list($uur,$minuten ) = explode('.', $whole);
+        $minuten = $minuten * 60;
+        $uren = $uur. ':' . $minuten. ':' . $nodig;
+    }
     echo $tijdin. '<br> '. $tijdout. '<br>' ;
-    echo $uren;
+    echo $uren . '<br>';
+    echo $uur . '<br>';
+    echo $minuten . '<br>';
+    echo $whole . '<br>';
+    
 ?>
 
 
