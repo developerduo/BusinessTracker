@@ -3,13 +3,16 @@
 require_once('config.php');
 session_start();
 $loginError = '';
+
+    $username = $_COOKIE['username'];
+    $ID = $_COOKIE['id'];
+    $date = date("d:m:Y");
+    $time = date("H:i:s") ;
 if(!isset($_COOKIE['username'])) {
     header("Location: ./login.php");
 }
 if(isset($_POST['klokin'])) {
     try{
-    $username = $_COOKIE['username'];
-    $ID = $_COOKIE['id'];
     $password = md5($_POST['pwd']);
     $date = date("d:m:Y");
     $time = date("H:i:s") ;
@@ -57,12 +60,6 @@ catch(exception $E) {
     echo 'Er ging iets fout';
 }
 }
-
-    $username = $_COOKIE['username'];
-    $ID = $_COOKIE['id'];
-    $date = date("d:m:Y");
-    $time = date("H:i:s") ;
-    
     $totaletijd = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id ");
     $totaletijd->bindParam(':datum', $date);
     $totaletijd->bindParam(':id', $ID);
@@ -70,8 +67,13 @@ catch(exception $E) {
     $row2 = $totaletijd->fetch();
     $tijdin = $row2['tijdin'];
     $tijdout = $row2['tijdout'];
+    if($tijdout == '00:00:00'){
+        $uren = 0;
+    }else{
+        $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60;
+    }
+
     echo $tijdin. '<br> '. $tijdout. '<br>' ;
-    $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60;
     echo $uren;
 ?>
 
