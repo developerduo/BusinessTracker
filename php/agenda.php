@@ -96,7 +96,7 @@ switch($maand) {
         break;
     case 12: 
         $maand = 'december';
-        breal;
+        break;
 }
 
 ?>
@@ -149,9 +149,13 @@ switch($maand) {
                     $stmt->execute();
                     $result = $stmt->fetch(PDO::FETCH_ASSOC);
                     if($stmt->rowCount() > 0) {
+                    $timevanafArray = explode(':', $result['vanaf']);
+                    $timetotArray = explode(':', $result['tot']);
+                    $vanaf = $timevanafArray[0] . ':' . $timevanafArray[1]; 
+                    $tot = $timetotArray[1] . ':' . $timetotArray[1];
                     echo $result['naam'];
                     echo '<br>';
-                    echo $result['vanaf'] . ' - ' . $result['tot'];
+                    echo $vanaf . ' - ' . $tot;
                     } 
                 }
                 while($row = $stmt->fetch()) { 
