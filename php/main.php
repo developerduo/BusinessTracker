@@ -15,5 +15,6 @@ if(!isset($_COOKIE['username'])) {
 </head>
 <body>
     <a href='logout.php'>Logout</a>
+    
 </body>
 </html>
