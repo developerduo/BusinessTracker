@@ -9,6 +9,7 @@ $loginError = '';
     $date = date("d:m:Y");
     $time = date("H:i:s") ;
     $uren = '';
+    $decimal = '';
     $uur = '';
     $minuten = '';
     $whole = '';
@@ -82,14 +83,24 @@ if(isset($_GET['aluitgeklokt'])){
     $tijdout = $row2['tijdout'];
     if($tijdout == '00:00:00'){
         $uren = 0;
-        $tijdoutc = '';
     }
     elseif($tijdout > '00:00:00'){
-        $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60;
+        $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60 / 60;
         list($whole, $decimal) = explode('.', $uren);
-        $decimal = 0 . '.' . $decimal;
+        $decimal = 0 . '.'.$decimal;
         $decimal = $decimal * 60;
-        $tijdoutc = $tijdout;
+        $decimal = round($decimal , 0);
+        $uren = $whole;
+
+
+    }
+
+    $tussentekst = 'uur';
+
+    if($decimal > 1 || $decimal == 0){
+        $tussendecimal = 'minuten';
+    }else{
+        $tussendecimal = 'minuut';
     }
 
 
@@ -129,7 +140,8 @@ if(isset($_GET['aluitgeklokt'])){
 
 <p><?= $loginError ?></p>
 <p><?= $tijdin ?></p>
-<p><?= $tijdoutc ?></p>
+<p><?= $tijdout ?></p>
+<p><?= $uren . ' ' .$tussentekst . ' en ' . $decimal . ' ' . $tussendecimal ?> </p>
 
 
 
