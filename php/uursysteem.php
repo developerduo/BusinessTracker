@@ -138,10 +138,10 @@ if(isset($_GET['aluitgeklokt'])){
     </form>
 </div>
 
-<p><?= $loginError ?></p>
+ /* <p><?= $loginError ?></p>
 <p><?= $tijdin ?></p>
 <p><?= $tijdout ?></p>
-<p><?= $uren . ' ' .$tussentekst . ' en ' . $decimal . ' ' . $tussendecimal ?> </p>
+<p><?= $uren . ' ' .$tussentekst . ' en ' . $decimal . ' ' . $tussendecimal ?> </p> */
 
 
 
