@@ -4,10 +4,11 @@
 }
 html{
     scroll-behavior: smooth;
+ 
 }
 body{
     font-family: sans-serif;
-    background-color: #e1eae9;
+    background-color: white;
 }
 
 .navbar{
@@ -197,6 +198,31 @@ ul li {
 .MainBody{
     background-color: white;
 }
-th, td{
-    border: 1px solid black;
+.agendaWrapper{
+    margin: 20px;
+}
+#PreviousWeek{
+    display: none;
+}
+#NextWeek{
+    display: none;
+}
+td{
+    height: 60px;
+    width: 100px;
+
+}
+th{
+    border-spacing: 4px;
+}
+#PreviousLabel{
+    font-size: 20px;
+    cursor: pointer;
+}
+#NextLabel{
+    position: absolute;
+    left: 50px;
+    top: 57px;
+    font-size: 20px;
+    cursor: pointer;
 }

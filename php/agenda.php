@@ -110,31 +110,33 @@ switch($maand) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel='stylesheet' href='../css/main.css'>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Agenda</title>
 </head>
 <body>
     <div class="agendaWrapper">
+    <h1 id='agendaTitle'>Agenda</h1>
+
+                <form action="" method='post'><input id='PreviousWeek' value="Vorige week" type="submit" name='previousweek'><input type="hidden" name='week' value='<?= $weeknummer ?>'></form>
+                <label id='PreviousLabel' for="PreviousWeek"><i class="fas fa-chevron-left"></i></label>
+                <form action="" method='post'><input id='NextWeek' value='Volgende week' type="submit" name='nextweek'><input type="hidden" name='week' value='<?= $weeknummer ?>'></form>
+                <label id='NextLabel' for="NextWeek"><i class="fas fa-chevron-right"></i></label>
+                <p><b>Maand: <?= $maand ?></b></p>
+
         <table align='left' class='agendaTable'>
             <thead>
-                <tr>
-                    <th align='left'><?= $maand ?></th>
-                </tr>
                 <tr>
                     <th align='left'>Week: <?= $weeknummer ?></th>
                 </tr>
                 <tr>
-                    <th><form action="" method='post'><input value="Vorige week" type="submit" name='previousweek'><input type="hidden" name='week' value='<?= $weeknummer ?>'></form></th>
-                    <th><form action="" method='post'><input value='Volgende week' type="submit" name='nextweek'><input type="hidden" name='week' value='<?= $weeknummer ?>'></form></th>
-                </tr>
-                <tr>
-                    <th>Medewerkers:</th>
-                    <th>Maandag</th>
-                    <th>Dinsdag</th>
-                    <th>Woensdag</th>
-                    <th>Donderdag</th>
-                    <th>Vrijdag</th>
-                    <th>Zaterdag</th>
-                    <th>Zondag</th>
+                    <th align='left'>Medewerkers:</th>
+                    <th align='left'>Maandag</th>
+                    <th align='left'>Dinsdag</th>
+                    <th align='left'>Woensdag</th>
+                    <th align='left'>Donderdag</th>
+                    <th align='left'>Vrijdag</th>
+                    <th align='left'>Zaterdag</th>
+                    <th align='left'>Zondag</th>
                 </tr>
             </thead>
             <tbody>
@@ -153,7 +155,7 @@ switch($maand) {
                     $timevanafArray = explode(':', $result['vanaf']);
                     $timetotArray = explode(':', $result['tot']);
                     $vanaf = $timevanafArray[0] . ':' . $timevanafArray[1]; 
-                    $tot = $timetotArray[1] . ':' . $timetotArray[1];
+                    $tot = $timetotArray[0] . ':' . $timetotArray[1];
                     echo $result['naam'];
                     echo '<br>';
                     echo $vanaf . ' - ' . $tot;                                                                                                                                 
