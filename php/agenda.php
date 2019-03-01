@@ -109,6 +109,7 @@ switch($maand) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='../css/main.css'>
     <title>Agenda</title>
 </head>
 <body>
@@ -155,7 +156,7 @@ switch($maand) {
                     $tot = $timetotArray[1] . ':' . $timetotArray[1];
                     echo $result['naam'];
                     echo '<br>';
-                    echo $vanaf . ' - ' . $tot;                                                                                                                                   
+                    echo $vanaf . ' - ' . $tot;                                                                                                                                 
                     } 
                 }
                 
@@ -163,19 +164,20 @@ switch($maand) {
                     $ID = $row['ID'];  ?>
                 <tr>
                     <td><?= $row['voornaam'] ?></td>
-                    <td><?php 
-                    $result = werkcheck($maandag, $ID);  ?></td>
-                    <td><?php 
+                    <td class='agendaBlok'><?php 
+                    $result = werkcheck($maandag, $ID);  ?>
+                    </td>
+                    <td class='agendaBlok'><?php 
                     werkcheck($dinsdag, $ID); ?></td>
-                    <td><?php 
+                    <td class='agendaBlok'><?php 
                     werkcheck($woensdag, $ID); ?></td>
-                    <td><?php 
+                    <td class='agendaBlok'><?php 
                     werkcheck($donderdag, $ID); ?></td>
-                    <td><?php 
+                    <td class='agendaBlok'><?php 
                     werkcheck($vrijdag, $ID); ?></td>
-                    <td><?php 
+                    <td class='agendaBlok'><?php 
                     werkcheck($zatedag, $ID); ?></td>
-                    <td><?php 
+                    <td class='agendaBlok'><?php 
                     werkcheck($zondag, $ID); ?></td>
                 </tr>
             <?php } ?>

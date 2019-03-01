@@ -7,7 +7,7 @@ html{
 }
 body{
     font-family: sans-serif;
-    background-color: grey;
+    background-color: white;
 }
 
 .navbar{
@@ -196,4 +196,7 @@ ul li {
 }
 .MainBody{
     background-color: white;
+}
+th, td{
+    border: 1px solid black;
 }
