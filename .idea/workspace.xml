@@ -51,20 +51,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="265" column="13" selection-start-line="265" selection-start-column="13" selection-end-line="265" selection-end-column="13" />
+            <state relative-caret-position="885">
+              <caret line="301" column="12" selection-start-line="301" selection-start-column="12" selection-end-line="301" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/php/uursysteem.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="148" column="108" selection-start-line="148" selection-start-column="108" selection-end-line="148" selection-end-column="108" />
+            <state relative-caret-position="75">
+              <caret line="92" column="48" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -87,8 +87,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/php/uursysteem.php" />
         <option value="$PROJECT_DIR$/css/main.css" />
+        <option value="$PROJECT_DIR$/php/uursysteem.php" />
       </list>
     </option>
   </component>
@@ -97,7 +97,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="950" />
-    <option name="width" value="979" />
+    <option name="width" value="980" />
     <option name="height" value="1090" />
   </component>
   <component name="ProjectView">
@@ -161,6 +161,9 @@
       <option name="presentableId" value="Default" />
       <updated>1551360810682</updated>
       <workItem from="1551360812066" duration="2993000" />
+      <workItem from="1551391034302" duration="110000" />
+      <workItem from="1551427854318" duration="3430000" />
+      <workItem from="1551475434911" duration="2008000" />
     </task>
     <task id="LOCAL-00001" summary="To home">
       <created>1551363787694</created>
@@ -173,12 +176,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8020000" />
+    <option name="totallyTimeSpent" value="13568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20042644" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20735608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -211,6 +215,13 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a521b627-d03f-451d-b5db-5f5e072300bb/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/img/businesstrackerManagePicture.png" />
+    <entry file="file://$PROJECT_DIR$/img/businesstracker logo test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/background.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="das://a521b627-d03f-451d-b5db-5f5e072300bb/schema/businesstracker/table/hoursystem">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -218,26 +229,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/img/businesstrackerManagePicture.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/businesstracker logo test.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/img/background.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/uursysteem.php">
+    <entry file="file://$PROJECT_DIR$/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="148" column="108" selection-start-line="148" selection-start-column="108" selection-end-line="148" selection-end-column="108" />
+        <state relative-caret-position="885">
+          <caret line="301" column="12" selection-start-line="301" selection-start-column="12" selection-end-line="301" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
+    <entry file="file://$PROJECT_DIR$/php/uursysteem.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="265" column="13" selection-start-line="265" selection-start-column="13" selection-end-line="265" selection-end-column="13" />
+        <state relative-caret-position="75">
+          <caret line="92" column="48" selection-start-line="92" selection-start-column="48" selection-end-line="92" selection-end-column="48" />
         </state>
       </provider>
     </entry>

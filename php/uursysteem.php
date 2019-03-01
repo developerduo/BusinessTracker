@@ -81,8 +81,26 @@ if(isset($_GET['aluitgeklokt'])){
     $row2 = $totaletijd->fetch();
     $tijdin = $row2['tijdin'];
     $tijdout = $row2['tijdout'];
-    if($tijdout == '00:00:00'){
-        $uren = 0;
+    $uren = '';
+    $decimal = '';
+    $klokuit = '';
+    $tijdgewerkt = '';
+    $en = '';
+    $tijdtekst = '';
+    $tussentekst = '';
+    $tussendecimal = '';
+    if($tijdin > '00:00:00'){
+        $tijdtekst = 'Je bent zolaat ingeklokt: ';
+    }
+
+
+
+
+    if($tijdout == '00:00:00' ){
+        $uren = '';
+        $decimal = '';
+        $tijdout = '';
+
     }
     elseif($tijdout > '00:00:00'){
         $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60 / 60;
@@ -91,17 +109,25 @@ if(isset($_GET['aluitgeklokt'])){
         $decimal = $decimal * 60;
         $decimal = round($decimal , 0);
         $uren = $whole;
+        $klokuit = 'Je bent zolaat uitgeklokt: ';
+        $tijdgewerkt = 'Je hebt zolang gewerkt: ';
+        $en = " en ";
 
+
+
+
+        if($decimal > 1 ){
+            $tussendecimal = 'minuten';
+        }else{
+            $tussendecimal = 'minuut';
+        }
+        $tussentekst = 'uur';
 
     }
 
-    $tussentekst = 'uur';
 
-    if($decimal > 1 || $decimal == 0){
-        $tussendecimal = 'minuten';
-    }else{
-        $tussendecimal = 'minuut';
-    }
+
+
 
 
     
@@ -145,9 +171,25 @@ if(isset($_GET['aluitgeklokt'])){
 <p><?= $uren . ' ' .$tussentekst . ' en ' . $decimal . ' ' . $tussendecimal ?> </p> -->
 
    <div class="urenscherm">
-       <h3 class="Teksturen">Uren Overzicht</h3>
-       <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
+       <div class="urenschermpje">
+           <h3 class="Teksturen">Uren Overzicht</h3>
+           <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
+           <br>
+           <p><?= $loginError ?></p>
+           <br>
+           <p><?= $tijdtekst.$tijdin ?></p>
+           <br>
+           <p><?= $klokuit.$tijdout ?></p>
+           <br>
+        <p><?= $tijdgewerkt.$uren . ' ' .$tussentekst . $en . $decimal . ' ' . $tussendecimal ?> </p>
 
+       </div>
+       <div class="urenschermpje">
+
+       </div>
+       <div class="urenschermpje">
+
+       </div>
        <div class="urenschermpje">
 
        </div>

@@ -29,7 +29,7 @@ body{
 
 
 .inklokken{
-    width: 8%;
+    width: 15%;
     cursor: pointer;
     background-color: white;
     padding: 10px;
@@ -37,10 +37,10 @@ body{
     outline: none;
     color: black;
     margin: 2px;
-    font-size: 20px;
+    font-size: 1.75vh;
     border-radius: 10px;
     position: absolute;
-    right: 2%;
+    right: 5%;
     transition: all 0.5s ease-in-out;
 }
 
@@ -280,4 +280,24 @@ ul li {
     font-size: 3vw;
     text-align: center;
     font-family: sans-serif;
+    z-index: 0;
+}
+
+.urenschermpje{
+    position: relative;
+    border: 1px solid transparent;
+    left: 5%;
+    width: 40%;
+    height: 45%;
+    background-color: rgba(73,73,73, 0.5);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    float: left;
+}
+
+.urenschermpje p{
+    font-size: 1vw;
+    position: absolute;
+    left: 2%;
 }
