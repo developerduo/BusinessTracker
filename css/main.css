@@ -280,6 +280,7 @@ ul li {
     font-size: 3vw;
     text-align: center;
     font-family: sans-serif;
+    font-weight: normal;
     z-index: 0;
 }
 
@@ -301,3 +302,16 @@ ul li {
     position: absolute;
     left: 2%;
 }
+
+
+.Teksturen{
+    color: white;
+    padding: 10px;
+    text-align: center;
+    z-index: 0;
+}
+
+
+
+
+
