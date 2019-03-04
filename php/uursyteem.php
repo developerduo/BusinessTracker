@@ -43,13 +43,13 @@ if(isset($_POST['klokin'])) {
                 if($check->rowCount() > 0){
                     $row = $check->fetch();
                     if($row['tijdout'] > '00:00:00'){
-                        header('Location: ./uursysteem.php?aluitgeklokt');
+                        header('Location: ?aluitgeklokt');
                     }else{
                         $update = $conn->prepare("UPDATE hoursystem SET tijdout = '$time' WHERE datum = :datum AND user_ID = :id");
                         $update->bindParam(':datum', $date);
                         $update->bindParam(':id', $ID);
                         $update->execute();
-                        header('Location: ./uursysteem.php?uitgeklokt');}
+                        header('Location: ?uitgeklokt');}
                 } } else{
 
                 //User is nog niet ingeklokt
@@ -58,7 +58,7 @@ if(isset($_POST['klokin'])) {
                 $insert->bindParam(':id', $ID);
                 $insert->bindParam(':tijd', $time);
                 $result = $insert->execute();
-                header('Location: ./uursysteem.php?ingeklokt');
+                header('Location: ?ingeklokt');
             }
         }else{
             $loginError = 'Je wachtwoord is verkeerd';
@@ -124,11 +124,6 @@ elseif($tijdout > '00:00:00'){
     $tussentekst = 'uur';
 
 }
-
-
-
-
-
 
 
 ?>
