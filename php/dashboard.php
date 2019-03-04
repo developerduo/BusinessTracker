@@ -13,51 +13,48 @@ include 'uursyteem.php';
     <title>DASHBOARD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
 
 </head>
-<body class="background">
+<body>
+
+<header>
+ <a href="dashboard.php" class="header-brand">businesstracker</a>
+    <nav>
+        <ul>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Uren</a> </li>
+            <li><a href="#">Loon</a></li>
+            <li><a href="#">Grafiek</a></li>
+        </ul>
+
+    </nav>
+</header>
+
+<main>
+    <div class="wrapper">
+    <section class="index-banner">
+        <div class="index-boxlink-square">
+            <h3>Uren</h3>
+        </div>
+        <div class="index-boxlink-square">
+            <h3>loon</h3>
+        </div>
+        <div class="index-boxlink-square">
+            <h3>agenda</h3>
+        </div>
+        <div class="index-boxlink-long">
+            <h3>Grafiek</h3>
+        </div>
+
+    </section>
+
+</main>
+
+</div>
 
 
-
-      <nav class="topnav">
-
-          <h3 class="top_dash">Businesstracker
-              <h3 class="top_name">Dashboard</h3>
-          </h3>
-
-          <a onclick="Schermpje()"><div class="username_scherm">
-             <h3 class="username"><?= $_COOKIE['username']?></h3>
-          </div></a>
-          <div id="schermpje" >
-
-          </div>
-
-      </nav>
-
-
-
-      <nav class="sidenav">
-
-          <div class="dashboard">
-              <h3 class="text_dash">Dashboard</h3>
-                <img src="../img/agenda.png" class="imgdash">
-          </div>
-          <div class="uren">
-               <img src="../img/uren.png" class="imguren">
-              <h3 class="text_uren">Uren</h3>
-          </div>
-          <div class="loon">
-              <img src="../img/loon.png" class="imgloon">
-              <h3 class="text_loon">Loon</h3>
-          </div>
-
-
-
-
-      </nav>
-
-      
 
 
 <script src="../js/main.js"></script>

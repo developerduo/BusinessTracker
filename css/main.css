@@ -1,18 +1,115 @@
-*{
-    margin: 0;
-    padding: 0;
+
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
-html{
-    scroll-behavior: smooth;
-    width: 100%;
-    height: 100%;
+
+body {
+    line-height:1;
 }
-body{
-    font-family: sans-serif;
-    background-color: grey;
-    width: 100%;
-    height: 100%;
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
 }
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*
+Onze code
+
+ */
+
+
+
+
 
 .navbar{
     max-width: 100%;
@@ -83,7 +180,7 @@ body{
     max-width: 100%;
     background-color: rgb(90, 90, 90);
 }
-a {
+/*a {
 
     font-weight: bold;
     text-decoration: none;
@@ -100,7 +197,7 @@ ul li {
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 
-}
+} */
 .scroll {
     position: fixed;
     opacity: 1;
@@ -184,35 +281,7 @@ ul li {
     border-radius: 10px;
 }
 
-#inklokscreen{
-    opacity: 0;
-    border: 0px solid transparent;
-    height: 200px;
-    width: 500px;
-    background-color: rgb(255, 255, 255, 0.7);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: 0.1s all ease-in-out;
-    border-radius: 5px;
-    z-index: 1;
-    
-}
 
-.closebtn{
-    position: absolute;
-    cursor: pointer;
-    font-size: 30px;
-    top: 6px;
-    right: 10px;
-}
-
-.naaminklok{
-    font-family: sans-serif;
-    font-size: 17.5px;
-    padding: 10px;
-}
 
 .passwdinklok_wrapper{
     position: absolute;
@@ -262,252 +331,164 @@ ul li {
     font-weight: 600;
 }
 
-.urenscherm{
-    border-radius: 10px;
-    position: absolute;
-    border: 5px solid rgb(73,73,73);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 75%;
-    height: 80%;
-    background-color: rgba(73,73,73, 0.8);
-    color: white;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
-    z-index: 0;
+*{
+    text-decoration: none;
 }
 
-.Dashboard{
-    color: rgba(73,73,73,0.9);
-    font-size: 3vw;
-    text-align: center;
-    font-family: sans-serif;
-    font-weight: normal;
-    z-index: 0;
+body{
+    background-color: rgba(206, 206, 206, 1);
 }
 
-.urenschermpje{
-    position: relative;
-    border: 1px solid transparent;
-    left: 5%;
-    width: 40%;
-    height: 45%;
-    background-color: rgba(73,73,73, 0.5);
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    float: left;
-}
-
-.urenschermpje p{
-    font-size: 1vw;
-    position: absolute;
-    left: 2%;
-}
-
-
-.Teksturen{
-    color: white;
-    padding: 10px;
-    text-align: center;
-    z-index: 0;
-}
-
-.background{
-    background-color: rgba(0,0,0,0.73);
+header{
+    background-color: #fff;
     width: 100%;
-    height: 100%;
-    z-index: 0;
+    height: 100px;
 }
 
-.topnav{
+header .header-brand{
+    font-family: Catamaran;
+    font-size: 20px;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+
+
+}
+
+header nav ul{
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+header nav ul li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    padding: 0 16px;
+}
+
+header nav ul li a {
+    font-family: Catamaran;
+    font-size: 16px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+
+
+.index-banner div{
+    margin: 16px 16px 10px;
+    width: calc(100% - 32px);
+    height: 200px;
+    background-color: rgb(237, 237, 237);
+}
+
+.index-banner div h3{
+    font-family: Catamaran;
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 100px;
+    color: #111;
+    text-align: center;
+}
+
+
+
+footer{
+    width: calc(100% - 80px);
+    padding: 40px 40px;
+    background-color: #111;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+footer ul{
+    width: fit-content;
+    float: left;
+    padding-left: 20px;
+}
+
+footer ul li{
+    display: block;
+    list-style: none;
+}
+
+footer ul li a{
+      font-family: Catamaran;
+    font-size: 24px;
+    color: white;
+    line-height: 40px;
+}
+
+.footer-links-main{
+
+}
+
+.footer-sm{
+    width: 50px;
+    float: right;
+
+}
+
+.footer-sm img{
     width: 100%;
-    height: 12%;
-    background-color: white;
-    z-index: 1;
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+
+    header .header-brand{
+        margin-top: 31px ;
+        text-align: left;
+        padding: 0px 20px 0px 40px;
+        border-right: 3px solid #111;
+        float: left;
+        line-height: 38px;
+
+
+
+
+    }
+
+    header nav ul{
+        margin: 20px 0 0 20px;
+        float: left;
+
+    }
+
+
+
+    header nav ul li a {
+        line-height: 60px;
+    }
+
+    .index-banner div{
+        margin: 20px 10px 0;
+        height: 200px;
+        background-color: rgb(237, 237, 237);
+    }
+
+    .wrapper{
+        width: 1000px;
+        margin: 0 auto;
+
+    }
+
+    .index-boxlink-square{
+        width: calc(100% - 20px) !important;
+    }
+
+    .index-boxlink-long{
+
+    }
 
 }
 
-.sidenav{
-    width: 20%;
-    height: 88%;
-    background-color: rgba(0,0,0,0.26);
-    z-index: 1;
-}
-
-.top_dash{
-    color: rgba(0,0,0,1);
-    font-family: "Nirmala UI";
-    font-weight: normal;
-    font-size: 2vw;
-    margin-left: 47px;
-}
-
-.top_name{
-    color: rgba(0,0,0,1);
-    font-family: "Nirmala UI";
-    font-weight: normal;
-    font-size: 1.5vw;
-    margin-left: 90px;
-}
-
-.dashboard{
-    position: absolute;
-    margin-top: 25px;
-    margin-left: 10px;
-    height: 8%;
-    width: 4%;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.32);
-}
-
-.uren{
-    position: absolute;
-    margin-top: 120px;
-    margin-left: 10px;
-    height: 8%;
-    width: 4%;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.32);
-}
-
-.loon{
-    position: absolute;
-    margin-top: 220px;
-    margin-left: 10px;
-    height: 8%;
-    width: 4%;
-    border-radius: 50%;
-    background-color: rgba(255,255,255,0.32);
-}
-
-.imgdash{
-    height: 35px;
-    width: 35px;
-    margin-left: 14px;
-    margin-top: 12px;
-}
-
-.imgloon{
-    height: 35px;
-    width: 35px;
-    margin-left: 14px;
-    margin-top: 12px;
-}
-
-.imguren{
-    height: 35px;
-    width: 35px;
-    margin-left: 14px;
-    margin-top: 12px;
-}
-
-.text_dash{
-    position: absolute;
-    margin-left: 85px;
-    margin-top: 18px;
-    font-family: "Nirmala UI";
-    font-weight: normal;
-    font-size: 1.4vw;
-    color: white;
-}
-
-.text_uren{
-    position: absolute;
-    margin-left: 85px;
-    margin-top: -33px;
-    font-family: "Nirmala UI";
-    font-weight: normal;
-    font-size: 1.4vw;
-    color: white;
-}
-
-.text_loon{
-    position: absolute;
-    margin-left: 85px;
-    margin-top: -33px;
-    font-family: "Nirmala UI";
-    font-weight: normal;
-    font-size: 1.4vw;
-    color: white;
-}
-
-.username_scherm{
-   position: absolute;
-    width: 10%;
-    height: 7%;
-    border-radius: 10px;
-    background-color: rgba(73,73,73,1);
-    right: 10px;
-    margin-top: -50px;
-    z-index: 2;
-}
-
-.username{
-    color: white;
-    font-family: "Nirmala UI";
-    font-weight: normal;
-    font-size: 1.5vw;
-    z-index: 3;
-    margin-left: 30px;
-    margin-top: 8px;
-    cursor: pointer;
-}
-
-#schermpje{
-    position: absolute;
-    opacity: 1;
-    width: 10%;
-    height: 0%;
-    border-radius: 10px;
-    background-color: rgb(73,73,73,1);
-    right: 10px;
-    z-index: 2;
-    transition: 0.5s all ease-in-out;
-    margin-top: -10px;
-
-}
-
-.scherm1{
-    float: left;
-    margin-left: 320px;
-    margin-top: -650px;
-    width: 23%;
-    height: 40%;
-    background-color: rgb(255,255,255);
-    box-shadow: 11px 11px 10px rgb(0,0,0);
-}
-
-.scherm2{
-    float: left;
-    margin-left: 740px;
-    margin-top: -650px;
-    width: 23%;
-    height: 40%;
-    background-color: rgb(255,255,255);
-    box-shadow: 11px 11px 10px rgb(0,0,0);
-}
-
-.scherm3{
-    float: left;
-    margin-left: 1160px;
-    margin-top: -650px;
-    width: 23%;
-    height: 40%;
-    background-color: rgb(255,255,255);
-    box-shadow: 11px 11px 10px rgb(0,0,0);
-}
-
-.scherm4{
-    float: left;
-    margin-left: 320px;
-    margin-top: -300px;
-    width: 78%;
-    height: 35%;
-    background-color: rgb(255,255,255);
-    box-shadow: 11px 11px 10px rgb(0,0,0);
-}
 
 
