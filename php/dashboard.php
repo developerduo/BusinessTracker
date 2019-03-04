@@ -57,10 +57,7 @@ include 'uursyteem.php';
 
       </nav>
 
-      <div class="scherm1"></div>
-      <div class="scherm2"></div>
-      <div class="scherm3"></div>
-      <div class="scherm4"></div>
+      
 
 
 <script src="../js/main.js"></script>
