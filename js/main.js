@@ -37,4 +37,22 @@ function Tobottom() {
     window.scrollTo(0,1500);
 }
 
+open = false;
+
+function Schermpje() {
+    if(open == false) {
+        document.getElementById('schermpje').style.height = '30%';
+        console.log('faka');
+        open = true;
+    } else {
+        document.getElementById('schermpje').style.height = '0%';
+        open = false;
+    }
+
+
+
+
+
+}
+
 

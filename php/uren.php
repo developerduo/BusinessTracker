@@ -14,7 +14,7 @@ include 'uursyteem.php';
 
 </head>
 <body>
-<a href="dashboard.php">Faka</a>
+
 
 </body>
 

@@ -17,55 +17,47 @@ include 'uursyteem.php';
 
 
 </head>
-<body class="bovenkant_uur">
-  
+<body class="background">
 
-  
+      <nav class="topnav">
 
-   <h3 class="Dashboard">Dashboard</h3>
+          <h3 class="top_dash">Businesstracker
+              <h3 class="top_name">Dashboard</h3>
+          </h3>
 
-   <!--<a href="logout.php">Logout</a> -->
+          <a onclick="Schermpje()"><div class="username_scherm">
+             <h3 class="username"><?= $_COOKIE['username']?></h3>
+          </div></a>
+          <div id="schermpje" >
 
-   <div id="inklokscreen">
-   <form method="POST" action=''> 
-       <a onclick="Closebtn()" class="closebtn"><i class="fas fa-times"></i></a>
-       <div class="boventekst">Inklokken</div>
-       <div class="naaminklok"><?= $_COOKIE['username'] ?></div>
-       <div class="passwdinklok_wrapper"><input type="password" name="pwd" class="passinklok" placeholder="Wachtwoord"></div>
-       <button type="submit" name="klokin" class="submitinklok">Klok me in</button>
-    </form>
-</div>
+          </div>
 
- <!-- <p><?= $loginError ?></p>
-<p><?= $tijdin ?></p>
-<p><?= $tijdout ?></p>
-<p><?= $uren . ' ' .$tussentekst . ' en ' . $decimal . ' ' . $tussendecimal ?> </p> -->
+      </nav>
 
-   <div class="urenscherm">
-       <div class="urenschermpje">
-           <a href="uren.php"><h3 class="Teksturen">Uren Overzicht</h3></a>
-           <div class="Inklok_wrapper"> <button onclick="InKlokken()" class="inklokken">Inklokken</button></div>
-           <br>
-           <p><?= $loginError ?></p>
-           <br><br>
-           <p><?= $tijdtekst.$tijdin ?></p>
-           <br><br>
-           <p><?= $klokuit.$tijdout ?></p>
-           <br><br>
-        <p><?= $tijdgewerkt.$uren . ' ' .$tussentekst . $en . $decimal . ' ' . $tussendecimal ?> </p>
+      <nav class="sidenav">
 
-       </div>
-       <div class="urenschermpje">
+          <div class="dashboard">
+              <h3 class="text_dash">Dashboard</h3>
+                <img src="../img/agenda.png" class="imgdash">
+          </div>
+          <div class="uren">
+               <img src="../img/uren.png" class="imguren">
+              <h3 class="text_uren">Uren</h3>
+          </div>
+          <div class="loon">
+              <img src="../img/loon.png" class="imgloon">
+              <h3 class="text_loon">Loon</h3>
+          </div>
 
-       </div>
-       <div class="urenschermpje">
 
-       </div>
-       <div class="urenschermpje">
 
-       </div>
-   </div>
 
+      </nav>
+
+      <div class="scherm1"></div>
+      <div class="scherm1"></div>
+      <div class="scherm1"></div>
+      <div class="scherm4"></div>
 
 
 <script src="../js/main.js"></script>
