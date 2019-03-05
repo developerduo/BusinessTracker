@@ -20,20 +20,22 @@ include 'uursyteem.php';
 <body>
 
 <header>
- <a href="dashboard.php" class="header-brand">businesstracker</a>
-    <nav>
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Uren</a> </li>
-            <li><a href="#">Loon</a></li>
-            <li><a href="#">Grafiek</a></li>
-        </ul>
+    <div class="wrapper-text"><h3 class="header-brand-mobile">businesstracker</h3>
+        <h3 class="header-brand-extra-mobile">dashboard</h3></div>
 
-    </nav>
+    <div class="text-wrapper"><h3 class="header-brand">businesstracker</h3>
+    <h3 class="header-brand-extra">dashboard</h3>
+    </div>
+
 </header>
+<nav class="sidenav-border">
 
+
+<div class="rounds"></div>
+
+</nav>
 <main>
-    <div class="wrapper">
+   <!--  <div class="wrapper">
     <section class="index-banner">
         <div class="index-boxlink-square">
             <h3>Uren</h3>
@@ -48,9 +50,10 @@ include 'uursyteem.php';
             <h3>Grafiek</h3>
         </div>
 
-    </section>
+    </section> -->
 
 </main>
+
 
 </div>
 

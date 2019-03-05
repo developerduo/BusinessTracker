@@ -335,6 +335,11 @@ ul li {
     text-decoration: none;
 }
 
+html body {
+    height: 100%;
+    width: 100%;
+}
+
 body{
     background-color: rgba(206, 206, 206, 1);
 }
@@ -345,7 +350,7 @@ header{
     height: 100px;
 }
 
-header .header-brand{
+header .header-brand-mobile{
     font-family: Catamaran;
     font-size: 20px;
     font-weight: 800;
@@ -355,8 +360,26 @@ header .header-brand{
     margin: 0 auto;
     text-align: center;
     padding: 20px 0;
+}
 
+header .header-brand-extra-mobile{
+    font-family: Catamaran;
+    font-size: 20px;
+    font-weight: 400;
+    color: #111;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 0;
+}
 
+header .header-brand-extra{
+    display: none;
+}
+
+header .header-brand{
+    display: none;
 }
 
 header nav ul{
@@ -400,60 +423,45 @@ header nav ul li a {
 
 
 
-footer{
-    width: calc(100% - 80px);
-    padding: 40px 40px;
-    background-color: #111;
-    margin-top: 20px;
-    overflow: hidden;
-}
 
-footer ul{
-    width: fit-content;
-    float: left;
-    padding-left: 20px;
-}
 
-footer ul li{
-    display: block;
-    list-style: none;
-}
 
-footer ul li a{
-      font-family: Catamaran;
-    font-size: 24px;
-    color: white;
-    line-height: 40px;
-}
 
-.footer-links-main{
-
-}
-
-.footer-sm{
-    width: 50px;
-    float: right;
-
-}
-
-.footer-sm img{
-    width: 100%;
-    margin-bottom: 10px;
+.sidenav-border{
+    display: none;
 }
 
 @media only screen and (min-width: 1000px) {
 
+    header .header-brand-extra-mobile{
+        display: none;
+    }
+
+    header .header-brand-mobile{
+        display: none;
+    }
+
+    header .text-wrapper{
+        padding: 17px 0 0 70px;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+
     header .header-brand{
-        margin-top: 31px ;
-        text-align: left;
-        padding: 0px 20px 0px 40px;
-        border-right: 3px solid #111;
-        float: left;
-        line-height: 38px;
+        font-family: Catamaran;
+        font-size: 20px;
+        font-weight: 600;
+        color: #111;
+        display: block;
+    }
 
-
-
-
+    header .header-brand-extra{
+        font-family: Catamaran;
+        font-size: 20px;
+        font-weight: 400;
+        color: #111;
+        display: block;
+        padding: 5px 0 0 25px;
     }
 
     header nav ul{
@@ -485,6 +493,25 @@ footer ul li a{
     }
 
     .index-boxlink-long{
+        margin-bottom: 20px !important;
+    }
+
+    .sidenav-border{
+        background-color: rgb(50,50,51);
+        width: 364px;
+        height: 100vh;
+        display: block;
+        position: absolute;
+    }
+
+    .rounds{
+        display: block;
+        border-radius: 50px;
+        margin-top: 30px;
+        margin-left: 10px;
+        width: 100px;
+        height: 100px;
+        background-color: rgb(237, 237, 237);
 
     }
 
