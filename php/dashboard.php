@@ -31,7 +31,10 @@ include 'uursyteem.php';
 <nav class="sidenav-border">
 
 
-<div class="rounds"></div>
+    <div class="rounds"><img src="../img/agenda.png" class="navside-img"></div><h3 class="rounds-text">Agenda</h3>
+    <div class="rounds"><img src="../img/loon.png" class="navside-img"></div><h3 class="rounds-text">loon</h3>
+    <div class="rounds"><img src="../img/uren.png" class="navside-img" alt="uren"></div><h3 class="rounds-text">uren</h3>
+
 
 </nav>
 <main>

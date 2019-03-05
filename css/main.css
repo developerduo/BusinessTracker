@@ -442,7 +442,7 @@ header nav ul li a {
     }
 
     header .text-wrapper{
-        padding: 17px 0 0 70px;
+        padding: 17px 0 0 90px;
         margin: 0 auto;
         text-transform: uppercase;
     }
@@ -499,7 +499,7 @@ header nav ul li a {
     .sidenav-border{
         background-color: rgb(50,50,51);
         width: 364px;
-        height: 100vh;
+        height: 90vh;
         display: block;
         position: absolute;
     }
@@ -511,8 +511,27 @@ header nav ul li a {
         margin-left: 10px;
         width: 100px;
         height: 100px;
-        background-color: rgb(237, 237, 237);
+        background-color: rgb(237, 237, 237,0.32);
 
+    }
+
+    .rounds-text{
+        display: inline;
+        margin-top: -55px;
+        margin-left: 140px;
+        color: white;
+        font-family: Catamaran;
+        font-weight: 400;
+        font-size: 25px;
+        text-transform: uppercase;
+        float: left;
+    }
+
+    .navside-img{
+        width: 65px;
+        height: 65px;
+        margin-left: 18px;
+        margin-top: 15px;
     }
 
 }
