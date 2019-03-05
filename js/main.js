@@ -38,3 +38,19 @@ function cookieCheck() {
 function closeCookie() {
     document.getElementById('cookieCheck').style.display = 'none';
 }
+openAccount = false;
+function accountMenu() {
+    if(openAccount == false) {
+        document.getElementById('userMenu').style.height = '100px';
+        document.getElementById('arrowUp').style.display = 'initial';
+        document.getElementById('arrowDown').style.display = 'none';
+        openAccount = true;
+    } else{
+        document.getElementById('userMenu').style.height = '0px';
+        document.getElementById('arrowDown').style.display = 'initial';
+        console.log('dicht');
+        document.getElementById('arrowUp').style.display = 'none';
+        openAccount = false;
+    }
+
+}
