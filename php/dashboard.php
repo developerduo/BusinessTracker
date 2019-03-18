@@ -20,12 +20,21 @@ include 'uursyteem.php';
 <body>
 
 <header>
-    <div class="wrapper-text"><h3 class="header-brand-mobile">businesstracker</h3>
-        <h3 class="header-brand-extra-mobile">dashboard</h3></div>
-
-    <div class="text-wrapper"><h3 class="header-brand">businesstracker</h3>
-    <h3 class="header-brand-extra">dashboard</h3>
+    <div id="username">
+        <h3><?= $username ?></h3>
+       <h4 onclick="Usersettings()" id="dropdown"> > </h4>
     </div>
+
+    <div class="wrapper-text">
+        <h3 class="header-brand-mobile">businesstracker</h3>
+        <h3 class="header-brand-extra-mobile">dashboard</h3>
+    </div>
+
+    <div class="text-wrapper">
+        <h3 class="header-brand">businesstracker</h3>
+        <h3 class="header-brand-extra">dashboard</h3>
+    </div>
+
 
 </header>
 <nav class="sidenav-border">
@@ -38,27 +47,31 @@ include 'uursyteem.php';
 
 </nav>
 <main>
-   <!--  <div class="wrapper">
-    <section class="index-banner">
-        <div class="index-boxlink-square">
-            <h3>Uren</h3>
-        </div>
-        <div class="index-boxlink-square">
-            <h3>loon</h3>
-        </div>
-        <div class="index-boxlink-square">
-            <h3>agenda</h3>
-        </div>
-        <div class="index-boxlink-long">
-            <h3>Grafiek</h3>
-        </div>
+   <div class="wrapper">
+        <section class="index-banner">
+            <div class="index-boxlink-square">
+                <h3>Uren</h3>
+            </div>
 
-    </section> -->
+            <div class="index-boxlink-square">
+                <h3>loon</h3>
+            </div>
+
+            <div class="index-boxlink-square">
+                <h3>agenda</h3>
+            </div>
+
+            <div class="index-boxlink-long">
+                <h3>Grafiek</h3>
+            </div>
+
+        </section>
+   </div>
 
 </main>
 
 
-</div>
+
 
 
 

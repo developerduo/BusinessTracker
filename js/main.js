@@ -18,13 +18,6 @@ function OnScroll() {
     }
 } 
 
-function InKlokken(){
-    document.getElementById("inklokscreen").style.opacity = 1;
-}
-
-function Closebtn(){
-    document.getElementById("inklokscreen").style.opacity = 0;
-}
 
 function Totop() {
     window.scrollTo(0,0);
@@ -39,18 +32,21 @@ function Tobottom() {
 
 open = false;
 
-function Schermpje() {
-    if(open == false) {
-        document.getElementById('schermpje').style.height = '30%';
-        console.log('faka');
+
+function Usersettings() {
+
+
+    if(open === false) {
         open = true;
-    } else {
-        document.getElementById('schermpje').style.height = '0%';
+        document.getElementById('username').style.height = '500px';
+        document.getElementById('username').style.border = '1px solid black';
+        document.getElementById('dropdown').style.transform = 'rotate(-90deg)';
+    }else {
         open = false;
+        document.getElementById('username').style.height = '50px';
+        document.getElementById('username').style.border = 'none';
+        document.getElementById('dropdown').style.transform = 'rotate(90deg)';
     }
-
-
-
 
 
 }
