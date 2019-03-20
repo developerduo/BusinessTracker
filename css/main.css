@@ -527,14 +527,14 @@ header nav ul li a {
     .index-boxlink-square{
         width: 460px !important;
         height: 400px !important;
-        background-color: white;
+        background-color: white !important;
         box-shadow: 11px 11px 10px rgb(0,0,0);
     }
 
     .index-boxlink-long{
         width: 1450px !important;
         height: 400px !important;
-        background-color: white;
+        background-color: white !important;
         box-shadow: 11px 11px 10px rgb(0,0,0);
     }
 
