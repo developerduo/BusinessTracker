@@ -54,9 +54,6 @@ function accountMenu() {
         openAccount = false;
     }
 
-<<<<<<< HEAD
-}
-=======
 open = false;
 
 
@@ -81,4 +78,3 @@ function Usersettings() {
 }
 
 
->>>>>>> UurSysteem

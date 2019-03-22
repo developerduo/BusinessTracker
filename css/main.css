@@ -27,10 +27,9 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
-<<<<<<< HEAD
+
 html{
     scroll-behavior: smooth;
-<<<<<<< HEAD
     width: 100%;
     height: 100%;
 }
@@ -39,15 +38,13 @@ body{
     height: 100%;
     width: 100%;
     background-color: grey;
-=======
-<<<<<<< HEAD
+
  
 }
 body{
     font-family: sans-serif;
     background-color: white;
->>>>>>> agenda
-=======
+}
 
 body {
     line-height:1;
@@ -97,13 +94,11 @@ mark {
 
 del {
     text-decoration: line-through;
->>>>>>> UurSysteem
 }
 
 abbr[title], dfn[title] {
     border-bottom:1px dotted;
-    cursor:help;
->>>>>>> 1a9793417743588646b8cece75644e29d69efd18
+    cursor: help;
 }
 
 table {
@@ -262,8 +257,7 @@ ul li {
     transition: all 0.5s ease-in-out;
     text-align: center;
 }
-<<<<<<< HEAD
-=======
+
 
 .loginbtn:hover{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -287,7 +281,7 @@ ul li {
 
 }
 
->>>>>>> UurSysteem
+
 #submit_btn{
     width: 75px;
     cursor: pointer;
@@ -366,7 +360,7 @@ ul li {
 .optiesTitel{
     font-weight: 600;
 }
-<<<<<<< HEAD
+
 .cookieCheck{
     position: fixed;
     bottom: 0;
@@ -419,7 +413,7 @@ ul li {
 .dashboardBody{
     background-color: white;
 }
-<<<<<<< HEAD
+
 .dashboardSidebar {
     border-top: #6d6c6c 3px solid;
     width: 300px;
@@ -543,8 +537,7 @@ ul li {
     top: 60KOpx;
     transition: all 0.3s ease-in-out;
     z-index: 0;
-<<<<<<< HEAD
-=======
+}
 .agendaWrapper{
     margin: 20px;
 }
@@ -572,13 +565,10 @@ th{
     top: 57px;
     font-size: 20px;
     cursor: pointer;
->>>>>>> agenda
 }
-=======
-}
-=======
 
-*{
+
+* {
     text-decoration: none;
 }
 
@@ -831,5 +821,3 @@ header nav ul li a {
 
 
 
->>>>>>> UurSysteem
->>>>>>> 1a9793417743588646b8cece75644e29d69efd18
