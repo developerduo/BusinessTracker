@@ -41,11 +41,13 @@ function Usersettings() {
         document.getElementById('username').style.height = '500px';
         document.getElementById('username').style.border = '1px solid black';
         document.getElementById('dropdown').style.transform = 'rotate(-90deg)';
+        document.getElementById('Hidden').style.display = 'block';
     }else {
         open = false;
         document.getElementById('username').style.height = '50px';
         document.getElementById('username').style.border = 'none';
         document.getElementById('dropdown').style.transform = 'rotate(90deg)';
+        document.getElementById('Hidden').style.display = 'none';
     }
 
 

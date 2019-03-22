@@ -23,6 +23,9 @@ include 'uursyteem.php';
     <div id="username">
         <h3><?= $username ?></h3>
        <h4 onclick="Usersettings()" id="dropdown"> > </h4>
+       <div id='Hidden'>
+        <p><?= $ID ?></p>
+       </div>
     </div>
 
     <div class="wrapper-text">
