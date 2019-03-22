@@ -1,7 +1,33 @@
-*{
-    margin: 0;
-    padding: 0;
+
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
+<<<<<<< HEAD
 html{
     scroll-behavior: smooth;
     width: 100%;
@@ -12,7 +38,91 @@ body{
     height: 100%;
     width: 100%;
     background-color: grey;
+=======
+
+body {
+    line-height:1;
 }
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+>>>>>>> UurSysteem
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*
+Onze code
+
+ */
+
+
+
+
 
 .navbar{
     max-width: 100%;
@@ -23,6 +133,51 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.bovenkant_uur{
+    max-width: 100%;
+    background-color: #e1eae9;
+    z-index: 0;
+}
+
+
+
+.inklokken{
+    width: 15%;
+    cursor: pointer;
+    background-color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: black;
+    margin: 2px;
+    font-size: 1.75vh;
+    border-radius: 10px;
+    position: absolute;
+    right: 5%;
+    transition: all 0.5s ease-in-out;
+}
+
+.inklokken:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.8);
+}
+
+.submitinklok{
+    width: 100px;
+    cursor: pointer;
+    background-color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: black;
+    margin: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+    position: absolute;
+    left: 75%;
+    top: 70%;
+}
+
 .navbar ul{
     margin-top: 15px;
     margin-left: 10px;
@@ -42,11 +197,11 @@ body{
     margin-left: 20px;
 }
 .onderkant {
-    height: 660px;
+    height: 700px;
     max-width: 100%;
     background-color: #e1eae9;
 }
-a {
+/*a {
 
     font-weight: bold;
     text-decoration: none;
@@ -63,7 +218,7 @@ ul li {
     transition: all 0.5s ease-in-out;
     cursor: pointer;
 
-}
+} */
 .scroll {
     position: fixed;
     opacity: 1;
@@ -97,6 +252,32 @@ ul li {
     transition: all 0.5s ease-in-out;
     text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+.loginbtn:hover{
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.bg-text{
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-weight: bold;
+    font-size: 80px;
+    border: 10px solid rgb(255, 255, 255, 0);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    width: 700px;
+    padding: 20px;
+    text-align: center;
+
+}
+
+>>>>>>> UurSysteem
 #submit_btn{
     width: 75px;
     cursor: pointer;
@@ -125,6 +306,36 @@ ul li {
     font-size: 15px;
     border-radius: 10px;
 }
+
+
+
+.passwdinklok_wrapper{
+    position: absolute;
+    top: 50%;
+    margin-left: 5px;
+}
+
+.passinklok{
+    background-color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    color: black;
+    margin: 3px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+.boventekst{
+    font-family: sans-serif;
+    font-size: 30px;
+    padding: 10px;
+}
+
+
+::placeholder{
+    color: black;
+}
 #loginError{
     color: white;
     margin-left: 5px;
@@ -145,6 +356,7 @@ ul li {
 .optiesTitel{
     font-weight: 600;
 }
+<<<<<<< HEAD
 .cookieCheck{
     position: fixed;
     bottom: 0;
@@ -321,3 +533,259 @@ ul li {
     transition: all 0.3s ease-in-out;
     z-index: 0;
 }
+=======
+
+*{
+    text-decoration: none;
+}
+
+html body {
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    background-color: rgba(206, 206, 206, 1);
+}
+
+header{
+    background-color: #fff;
+    width: 100%;
+    height: 100px;
+}
+
+header .header-brand-mobile{
+    font-family: Catamaran;
+    font-size: 20px;
+    font-weight: 800;
+    color: #111;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header .header-brand-extra-mobile{
+    font-family: Catamaran;
+    font-size: 20px;
+    font-weight: 400;
+    color: #111;
+    text-transform: uppercase;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 0;
+}
+
+header .header-brand-extra{
+    display: none;
+}
+
+header .header-brand{
+    display: none;
+}
+
+header #username{
+    display: none;
+}
+
+header nav ul{
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+}
+
+header nav ul li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    padding: 0 16px;
+}
+
+header nav ul li a {
+    font-family: Catamaran;
+    font-size: 16px;
+    color: #111;
+    text-transform: uppercase;
+}
+
+
+
+.index-banner div{
+    margin: 16px 16px 10px;
+    width: calc(100% - 32px);
+    height: 400px;
+    background-color: rgb(237, 237, 237);
+}
+
+.index-banner div h3{
+    font-family: Catamaran;
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: uppercase;
+    line-height: 100px;
+    color: #111;
+    text-align: center;
+}
+
+
+
+
+
+
+
+.sidenav-border{
+    display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+
+    header .header-brand-extra-mobile{
+        display: none;
+    }
+
+    header .header-brand-mobile{
+        display: none;
+    }
+
+    header .text-wrapper{
+        padding: 17px 0 0 90px;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+
+    header .header-brand{
+        font-family: Catamaran;
+        font-size: 20px;
+        font-weight: 600;
+        color: #111;
+        display: block;
+    }
+
+    header .header-brand-extra{
+        font-family: Catamaran;
+        font-size: 20px;
+        font-weight: 400;
+        color: #111;
+        display: block;
+        padding: 5px 0 0 25px;
+    }
+
+    header #username{
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        background-color: rgba(206, 206, 206, 1);
+        width: 200px;
+        height: 50px;
+        z-index: 1;
+        transition: 0.5s all ease-in-out;
+    }
+
+    header #username h3{
+        position: absolute;
+        margin-top: 12.5px;
+        margin-left: 20px;
+        font-size: 28px;
+        font-weight: 500;
+        font-family: Catamaran;
+        text-transform: uppercase;
+    }
+
+    header #username h4{
+        position: absolute;
+        margin-left: 170px;
+        margin-top: 12.5px;
+        font-size: 28px;
+        font-weight: 500;
+        font-family: Catamaran;
+        transform: rotate(90deg);
+        cursor: pointer;
+        transition: 0.5s all ease-in-out;
+    }
+
+    header nav ul{
+        margin: 20px 0 0 20px;
+        float: left;
+
+    }
+
+
+
+    header nav ul li a {
+        line-height: 60px;
+    }
+
+    .index-banner div{
+        display: inline-block;
+    }
+
+    .wrapper{
+        width: calc(100% - 350px);
+        margin: 0 0 0 350px;
+
+    }
+
+    .index-boxlink-square{
+        width: 460px !important;
+        height: 400px !important;
+        background-color: white !important;
+        box-shadow: 11px 11px 10px rgb(0,0,0);
+    }
+
+    .index-boxlink-long{
+        width: 1450px !important;
+        height: 400px !important;
+        background-color: white !important;
+        box-shadow: 11px 11px 10px rgb(0,0,0);
+    }
+
+    .sidenav-border{
+        background-color: rgb(50,50,51);
+        width: 300px;
+        height: calc(100% - 100px);
+        display: block;
+        position: absolute;
+    }
+
+    .rounds{
+        display: block;
+        border-radius: 50px;
+        margin-top: 30px;
+        margin-left: 10px;
+        width: 85px;
+        height: 85px;
+        background-color: rgb(237, 237, 237,0.32);
+
+    }
+
+    .rounds-text{
+        display: inline;
+        margin-top: -55px;
+        margin-left: 140px;
+        color: white;
+        font-family: Catamaran;
+        font-weight: 400;
+        font-size: 22px;
+        text-transform: uppercase;
+        float: left;
+    }
+
+    .navside-img{
+        width: 40px;
+        height: 40px;
+        margin-left: 22.5px;
+        margin-top: 22.5px;
+    }
+
+    header #Hidden{
+        display: none;
+    }
+
+}
+
+
+
+>>>>>>> UurSysteem

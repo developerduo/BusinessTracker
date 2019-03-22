@@ -28,7 +28,7 @@ if(isset($_POST['acceptCookie'])) {
                         <a onclick='Tobottom()'><li id="color3">Contact</li></a>
                     </ul>
 
-                   <a href="login.php"> <button type="button" name="loginbtn" class="loginbtn" id="loginbtn">Login</button></a>
+                   <a href="../php/login.php"> <button type="button" name="loginbtn" class="loginbtn" id="loginbtn">Login</button></a>
                     
                 </div> 
             </nav>
