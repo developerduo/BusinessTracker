@@ -757,20 +757,21 @@ header nav ul li a {
 
     .wrapper{
         width: calc(100% - 350px);
-        margin: 0 0 0 350px;
+        margin: 0 0 0 320px;
+        height: 100%;
 
     }
 
     .index-boxlink-square{
-        width: 460px !important;
-        height: 400px !important;
+        width: calc((100% /3) - 48px) !important;
+        height: 300px !important;
         background-color: white !important;
         box-shadow: 11px 11px 10px rgb(0,0,0);
     }
 
     .index-boxlink-long{
-        width: 1450px !important;
-        height: 400px !important;
+        width: calc(100%-300px) !important;
+        height: 316px !important;
         background-color: white !important;
         box-shadow: 11px 11px 10px rgb(0,0,0);
     }
@@ -815,6 +816,14 @@ header nav ul li a {
 
     header #Hidden{
         display: none;
+    }
+
+}
+
+@media only screen and (min-height: 900px){
+
+    main .index-boxlink-long{
+        height: 500px !important;
     }
 
 }

@@ -53,7 +53,7 @@ function accountMenu() {
         document.getElementById('arrowUp').style.display = 'none';
         openAccount = false;
     }
-
+}
 open = false;
 
 
