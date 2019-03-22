@@ -18,6 +18,7 @@ function OnScroll() {
     }
 } 
 
+
 function Totop() {
     var elmnt = document.getElementById("top");
     elmnt.scrollIntoView();
@@ -53,4 +54,31 @@ function accountMenu() {
         openAccount = false;
     }
 
+<<<<<<< HEAD
 }
+=======
+open = false;
+
+
+function Usersettings() {
+
+
+    if(open === false) {
+        open = true;
+        document.getElementById('username').style.height = '500px';
+        document.getElementById('username').style.border = '1px solid black';
+        document.getElementById('dropdown').style.transform = 'rotate(-90deg)';
+        document.getElementById('Hidden').style.display = 'block';
+    }else {
+        open = false;
+        document.getElementById('username').style.height = '50px';
+        document.getElementById('username').style.border = 'none';
+        document.getElementById('dropdown').style.transform = 'rotate(90deg)';
+        document.getElementById('Hidden').style.display = 'none';
+    }
+
+
+}
+
+
+>>>>>>> UurSysteem
