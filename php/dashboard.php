@@ -54,6 +54,10 @@ include 'uursyteem.php';
         <section class="index-banner">
             <div class="index-boxlink-square">
                 <h3>Uren</h3>
+                <?= $tijdin ?>
+                <?= $tijdout ?>
+                <?= $uren ?>
+                <?= $decimal ?>
             </div>
 
             <div class="index-boxlink-square">
