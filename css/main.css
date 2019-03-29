@@ -295,7 +295,7 @@ table{
     border-collapse: collapse;
 }
 .werkBlok{
-    background-color: grey;
+    background-color: #c4c8ce;
     height: 100%;
     width: 100%;
     
@@ -303,6 +303,9 @@ table{
 .werkBlok span{
     margin: 2px;
     width: 100%;
+}
+.vrijvraagTable{
+    margin-left: 20px;
 }
 
 

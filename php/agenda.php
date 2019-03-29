@@ -106,6 +106,43 @@ if(isset($_POST['naarVandaag'])) {
     $weeknummer = $date->format("W");
 }
 
+if(isset($_POST['vrijvragen'])) {
+        $datum = $_POST['datum'];
+        $sql = $conn->prepare("SELECT * FROM agenda WHERE datum = :datum AND user_ID = :ID");
+        $sql->bindParam(':datum', $datum);
+        $sql->bindParam(':ID', $ID);
+        $sql->execute();
+        if($sql->rowCount() > 0) {
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            $agenda_ID = $row['ID'];
+            $sql = $conn->prepare("INSERT INTO vrijvragingen (agenda_ID) VALUES ('$agenda_ID')");
+            $sql->execute();
+            if($sql) {
+                header("Location: ./agenda.php?vrijgevraagd");
+            }
+            
+        }
+}
+if(isset($_POST['overnemen'])) {
+    $user_ID = $_POST['user_ID'];
+    $agenda_ID = $_POST['agenda_ID'];
+    $vrijvraging_ID = $_POST['vrijvraging_ID'];
+
+    $sql = $conn->prepare("UPDATE agenda SET user_ID = :ID WHERE user_ID = :user_ID AND ID = :agenda_ID");
+    $sql->bindParam(':ID', $ID);
+    $sql->bindParam(':user_ID', $user_ID);
+    $sql->bindParam(':agenda_ID', $agenda_ID);
+    $sql->execute();
+    if($sql) {
+        $sql = $conn->prepare("DELETE FROM vrijvragingen WHERE ID = :ID");
+        $sql->bindParam(":ID", $vrijvraging_ID);
+        $sql->execute();
+        if($sql) {
+            header("Location: ./agenda.php?overgenomen");
+        }
+    } 
+}
+
 ?>
 
 
@@ -210,6 +247,7 @@ if(isset($_POST['naarVandaag'])) {
                     echo "<span>" . $result['naam'] . "</span>";
                     echo '<br>';
                     echo "<span>" . $vanaf . ' - ' . $tot . "</span>";   
+                    echo "<form action='' method='POST'><input type='submit' name='vrijvragen' value='Vrij vragen'><input type='hidden' name='datum' value='".$result['datum']."'></form>";
                     echo '</div>';                                                                                                                              
                     } 
                 }
@@ -259,11 +297,52 @@ if(isset($_POST['naarVandaag'])) {
             <?php } ?>
             </tbody>
         </table>
-        <?php 
+        <table class='vrijvraagTable'>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Naam</th>
+                    <th>Vrijvrager</th>
+                    <th>Overnemen</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <?php 
+                        $sql = $conn->prepare("SELECT * FROM vrijvragingen JOIN agenda ON vrijvragingen.agenda_ID = agenda.ID");
+                        $sql->execute();
+                        if($sql->rowCount() > 0) {
+                            while($row = $sql->fetch(PDO::FETCH_ASSOC)) :
+                                $query = $conn->prepare("SELECT ID FROM vrijvragingen WHERE agenda_ID = :agenda_ID");
+                                $query->bindParam(':agenda_ID', $row['ID']);
+                                $query->execute();
+                                $vrijvragingenRow = $query->fetch(PDO::FETCH_ASSOC);
+                        
+                                $sql = $conn->prepare("SELECT * FROM users WHERE ID = :id");
+                                $sql->bindParam(':id', $row['user_ID']);
+                                $sql->execute();
+                                $userRow = $sql->fetch(PDO::FETCH_ASSOC);
+                            ?>
+                                <tr>
+                                    <td><?= $row['datum'] ?></td>
+                                    <td><?= $row['naam'] ?></td>
+                                    <td><?= $userRow['voornaam'] ?></td>
+                                    <td><form action="" method="post">
+                                    <input type="submit" value='overnemen' name='overnemen'>
+                                    <input type="hidden" value="<?= $row['agenda_ID'] ?>" name='agenda_ID'>
+                                    <input type="hidden" value="<?= $userRow['ID'] ?>" name='user_ID'>
+                                    <input type="hidden" value="<?= $vrijvragingenRow['ID'] ?>" name="vrijvraging_ID">
+                                    </form></td>
+                                </tr>
+                        <?php endwhile;
+                        }
+
+                    
+                    ?>
+            
+                </tbody>
         
+        </table>
 
-
-?>      
        
     </div>
 </body>
