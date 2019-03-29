@@ -20,12 +20,18 @@ if(isset($_POST['submitLogin'])) {
    
     $stmt->execute();
     if($stmt->rowCount() > 0) {
-        header("Location: ./main.php?LoggedIn");
         $row = $stmt->fetch();
         $firstname = $row['voornaam'];
         $id = $row['ID'];
-        setcookie("username", $firstname, time()+3600);
-        setcookie("id", $id, time()+3600);
+        $userlevel = $row['userlevel'];
+        setcookie("username", $firstname, time() + 3600);
+        setcookie("id", $id, time() + 3600);
+        setcookie("userlevel" , $userlevel , time() + 3600);
+        if($userlevel == 3){
+            header("Location: ./inklok.php");
+        }else {
+            header("Location: ./dashboard.php");
+        }
     } else{
         $loginError = "Username or Password incorrect!";
     }

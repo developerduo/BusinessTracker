@@ -3,8 +3,6 @@ require_once('config.php');
 session_start();
 $loginError = '';
 
-$username = $_COOKIE['username'];
-$ID = $_COOKIE['id'];
 $date = date("d:m:Y");
 $time = date("H:i:s") ;
 $uren = '';
@@ -17,14 +15,15 @@ if(!isset($_COOKIE['username'])) {
 }
 if(isset($_POST['klokin'])) {
     try{
-        $password = md5($_POST['pwd']);
+        $code = ($_POST['pwd']);
         $date = date("d:m:Y");
         $time = date("H:i:s") ;
         //Check of wachtwoord klopt
-        $wachtwoordcheck = $conn->prepare("SELECT * FROM users WHERE voornaam = :username AND password = :password");
-        $wachtwoordcheck->bindParam(':username', $username);
-        $wachtwoordcheck->bindParam(':password', $password);
+        $wachtwoordcheck = $conn->prepare("SELECT * FROM users WHERE code = :code");
+        $wachtwoordcheck->bindParam(':code', $code);
         $wachtwoordcheck->execute();
+        $user = $wachtwoordcheck->fetch();
+        $ID = $user['ID'];
         if($wachtwoordcheck->rowCount() > 0) {
             //Check of hij al is ingeklokt
             $stmt = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :ID");
@@ -63,6 +62,8 @@ if(isset($_POST['klokin'])) {
         }else{
             $loginError = 'Je wachtwoord is verkeerd';
         }
+
+
     }
     catch(exception $E) {
         echo 'Er ging iets fout';
@@ -73,57 +74,6 @@ if(isset($_GET['aluitgeklokt'])){
     $loginError = 'Je bent vandaag al ingeklokt en uitgeklokt';
 }
 
-$totaletijd = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id ");
-$totaletijd->bindParam(':datum', $date);
-$totaletijd->bindParam(':id', $ID);
-$totaletijd->execute();
-$row2 = $totaletijd->fetch();
-$tijdin = $row2['tijdin'];
-$tijdout = $row2['tijdout'];
-$uren = '';
-$decimal = '';
-$klokuit = '';
-$tijdgewerkt = '';
-$en = '';
-$tijdtekst = '';
-$tussentekst = '';
-$tussendecimal = '';
-if($tijdin > '00:00:00'){
-    $tijdtekst = 'Inkloktijd: ';
-}
-
-
-
-
-if($tijdout == '00:00:00' ){
-    $uren = '';
-    $decimal = '';
-    $tijdout = '';
-
-}
-elseif($tijdout > '00:00:00'){
-    $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60 / 60;
-    list($whole, $decimal) = explode('.', $uren);
-    $decimal = 0 . '.'.$decimal;
-    $decimal = $decimal * 60;
-    $decimal = round($decimal , 0);
-    $uren = $whole;
-    $klokuit = 'Uitkloktijd: ';
-    $tijdgewerkt = 'Werktijd: ';
-    $en = " en ";
-
-
-
-
-    if($decimal > 1 ){
-        $tussendecimal = 'minuten';
-    }else{
-        $tussendecimal = 'minuut';
-        $decimal = 1;
-    }
-    $tussentekst = 'uur';
-
-}
 
 
 ?>

@@ -311,6 +311,15 @@ ul li {
     border-radius: 10px;
 }
 
+.title{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 50px;
+    font-weight: 300;
+}
+
 
 
 .passwdinklok_wrapper{
@@ -816,6 +825,27 @@ header nav ul li a {
 
     header #Hidden{
         display: none;
+    }
+
+    header .logout{
+        font-size: 25px;
+        color: black;
+        font-weight: 200;
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    .klokininput{
+        background-color: white;
+        padding: 10px;
+        border: none;
+        outline: none;
+        color: black;
+        margin: 3px;
+        font-size: 15px;
+        border-radius: 10px;
     }
 
 }

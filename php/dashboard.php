@@ -2,6 +2,45 @@
 
 
 include 'uursyteem.php';
+include 'config.php';
+
+$ID = $_COOKIE['id'];
+$totaletijd = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id ");
+$totaletijd->bindParam(':datum', $date);
+$totaletijd->bindParam(':id', $ID);
+$totaletijd->execute();
+$row2 = $totaletijd->fetch();
+$tijdin = $row2['tijdin'];
+$tijdout = $row2['tijdout'];
+$uren = '';
+$decimal = '';
+$klokuit = '';
+$tijdgewerkt = '';
+$en = '';
+$tijdtekst = '';
+$tussentekst = '';
+$tussendecimal = '';
+if($tijdout == '00:00:00' ){
+    $uren = '';
+    $decimal = '';
+    $tijdout = '';
+
+}
+elseif($tijdout > '00:00:00'){
+    $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60 / 60;
+    list($whole, $decimal) = explode('.', $uren);
+    $decimal = 0 . '.'.$decimal;
+    $decimal = $decimal * 60;
+    $decimal = round($decimal , 0);
+    $uren = $whole;
+    $klokuit = 'Uitkloktijd: ';
+    $tijdgewerkt = 'Werktijd: ';
+    $en = " en ";
+}
+
+$username = $_COOKIE["username"]
+
+
 
 ?>
 
@@ -24,7 +63,7 @@ include 'uursyteem.php';
         <h3><?= $username ?></h3>
        <h4 onclick="Usersettings()" id="dropdown"> > </h4>
        <div id='Hidden'>
-        <p><?= $ID ?></p>
+        <a href="./logout.php" class="logout">Logout</a>
        </div>
     </div>
 
