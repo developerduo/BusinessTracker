@@ -4,8 +4,9 @@ if(!isset($_COOKIE['username'])) {
     header('Location: ./logout.php');
 }
 
-require_once 'config.php';
+require_once '../includes/config.php';
 $ID = $_COOKIE['id'];
+
 
 //Check week
 $year = date("Y");
@@ -19,6 +20,7 @@ if(isset($_POST['nextweek'])) {
     if($weeknummer < 10) {
         $weeknummer = '0' . $weeknummer;
     }
+    
 }
 if(isset($_POST['previousweek'])) {
     $weeknummer = $_POST['week'] - 1; 
@@ -231,11 +233,11 @@ if(isset($_POST['overnemen'])) {
                 $query->bindParam(':ID', $ID);
                 $query->execute();
 
-                function werkcheck($dag, $ID) {
+                function werkcheck($dag, $user_ID, $ID) {
                     include 'config.php';
                     $stmt = $conn->prepare("SELECT * FROM agenda WHERE datum = :datum AND user_ID = :ID");
                     $stmt->bindParam(':datum', $dag);
-                    $stmt->bindParam(':ID', $ID);
+                    $stmt->bindParam(':ID', $user_ID);
                     $stmt->execute();
                     $result = $stmt->fetch(PDO::FETCH_ASSOC);
                     if($stmt->rowCount() > 0) {
@@ -247,52 +249,54 @@ if(isset($_POST['overnemen'])) {
                     echo "<span>" . $result['naam'] . "</span>";
                     echo '<br>';
                     echo "<span>" . $vanaf . ' - ' . $tot . "</span>";   
+                    if($user_ID == $ID) {
                     echo "<form action='' method='POST'><input type='submit' name='vrijvragen' value='Vrij vragen'><input type='hidden' name='datum' value='".$result['datum']."'></form>";
+                    }
                     echo '</div>';                                                                                                                              
                     } 
                 }
                 
                 while($row = $stmt->fetch()) { 
-                    $ID = $row['ID'];  ?>
+                    $user_ID = $row['ID'];  ?>
                 <tr>
                     <td><?= $row['voornaam'] ?></td>
                     <td class='agendaBlok'><?php 
-                    $result = werkcheck($maandag, $ID);  ?>
+                    $result = werkcheck($maandag, $user_ID, $ID);  ?>
                     </td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($dinsdag, $ID); ?></td>
+                    werkcheck($dinsdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($woensdag, $ID); ?></td>
+                    werkcheck($woensdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($donderdag, $ID); ?></td>
+                    werkcheck($donderdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($vrijdag, $ID); ?></td>
+                    werkcheck($vrijdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($zaterdag, $ID); ?></td>
+                    werkcheck($zaterdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($zondag, $ID); ?></td>
+                    werkcheck($zondag, $user_ID, $ID); ?></td>
                 </tr>
             <?php } ?>
             <?php
                     while($row = $query->fetch(PDO::FETCH_ASSOC)) { 
-                    $ID = $row['ID'];  ?>
+                    $user_ID = $row['ID'];  ?>
                 <tr>
                     <td><?= $row['voornaam'] ?></td>
                     <td class='agendaBlok'><?php 
-                    $result = werkcheck($maandag, $ID);  ?>
+                    $result = werkcheck($maandag, $user_ID, $ID);  ?>
                     </td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($dinsdag, $ID); ?></td>
+                    werkcheck($dinsdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($woensdag, $ID); ?></td>
+                    werkcheck($woensdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($donderdag, $ID); ?></td>
+                    werkcheck($donderdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($vrijdag, $ID); ?></td>
+                    werkcheck($vrijdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($zaterdag, $ID); ?></td>
+                    werkcheck($zaterdag, $user_ID, $ID); ?></td>
                     <td class='agendaBlok'><?php 
-                    werkcheck($zondag, $ID); ?></td>
+                    werkcheck($zondag, $user_ID, $ID); ?></td>
                 </tr>
             <?php } ?>
             </tbody>
