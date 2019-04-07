@@ -723,7 +723,6 @@ header nav ul li a {
         width: 200px;
         height: 50px;
         z-index: 1;
-        transition: 0.5s all ease-in-out;
     }
 
     header #username h3{
@@ -733,7 +732,6 @@ header nav ul li a {
         font-size: 28px;
         font-weight: 500;
         font-family: Catamaran;
-        text-transform: uppercase;
     }
 
     header #username h4{
@@ -827,12 +825,34 @@ header nav ul li a {
         display: none;
     }
 
-    header .logout{
+    header .profilesettings{
+        font-size: 25px;
+        color: black;
+        font-weight: 200;
+        margin-top: 50px;
+        margin-left: 20px;
+        display: flex;
+        width: 150px;
+        height: 40px;
+    }
+
+    header .profilesettings img{
+        height: 35px;
+        width: auto;
+    }
+
+    header .profile{
+        line-height: 40px;
+        margin-left: 10px;
+
+    }
+
+    header #logout{
         font-size: 25px;
         color: black;
         font-weight: 200;
         position: absolute;
-        top: 95%;
+        top: 90%;
         left: 50%;
         transform: translate(-50%,-50%);
     }

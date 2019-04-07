@@ -2,7 +2,7 @@
 
 $userlevel = $_COOKIE['userlevel'];
 
-if(!$userlevel == 3){
+if($userlevel < 3){
     header("Location: ./dashboard.php");
 }else {
     include "uursyteem.php";

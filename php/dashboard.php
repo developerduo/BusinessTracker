@@ -63,7 +63,11 @@ $username = $_COOKIE["username"]
         <h3><?= $username ?></h3>
        <h4 onclick="Usersettings()" id="dropdown"> > </h4>
        <div id='Hidden'>
-        <a href="./logout.php" class="logout">Logout</a>
+           <div class="profilesettings">
+               <img src="../img/profile.png">
+               <div class="profile">Profile</div>
+           </div>
+           <a href="./logout.php" id="logout">Logout</a>
        </div>
     </div>
 
@@ -93,18 +97,23 @@ $username = $_COOKIE["username"]
         <section class="index-banner">
             <div class="index-boxlink-square">
                 <h3>Uren</h3>
-                <?= $tijdin ?>
-                <?= $tijdout ?>
-                <?= $uren ?>
-                <?= $decimal ?>
+                <h1><?= $tijdin ?></h1><br>
+                <h1><?= $tijdout ?></h1>
+                <h1><?= $uren ?> uren en <?= $decimal ?> minuten</h1>
             </div>
 
             <div class="index-boxlink-square">
                 <h3>loon</h3>
+                <h1><?= $tijdin ?></h1><br>
+                <h1><?= $tijdout ?></h1>
+                <h1><?= $uren ?> uren en <?= $decimal ?> minuten</h1>
             </div>
 
             <div class="index-boxlink-square">
                 <h3>agenda</h3>
+                <h1><?= $tijdin ?></h1><br>
+                <h1><?= $tijdout ?></h1>
+                <h1><?= $uren ?> uren en <?= $decimal ?> minuten</h1>
             </div>
 
             <div class="index-boxlink-long">

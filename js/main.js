@@ -62,7 +62,7 @@ function Usersettings() {
 
     if(open === false) {
         open = true;
-        document.getElementById('username').style.height = '500px';
+        document.getElementById('username').style.height = '300px';
         document.getElementById('username').style.border = '1px solid black';
         document.getElementById('dropdown').style.transform = 'rotate(-90deg)';
         document.getElementById('Hidden').style.display = 'block';
