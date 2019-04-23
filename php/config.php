@@ -3,11 +3,12 @@
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$db = 'businesstracker';
+$db = 'businesstracker';    
+$conn = NULL;
 
 try{
     $conn = new PDO("mysql:host=$host;dbname=$db", $username, $password);
 } 
 catch(PDOException $E) {
-    echo $E->getMessage();
+    $error = $E->getMessage();
 }
