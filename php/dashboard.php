@@ -19,12 +19,22 @@ $tijdgewerkt = '';
 $en = '';
 $tijdtekst = '';
 $tussentekst = '';
+$tekstinklok = '';
+$tekstuitklok = '';
+$tekst = '';
 $tussendecimal = '';
+
+if($tijdin != '00:00:00'){
+    $tekstinklok = 'Inkloktijd: '.$tijdin;
+}else{
+    $tekstinklok = '';
+}
 if($tijdout == '00:00:00' ){
     $uren = '';
     $decimal = '';
     $tijdout = '';
-
+    $tekstinklok = 'Inkloktijd: '.$tijdin;
+    $tekstuitklok = '';
 }
 elseif($tijdout > '00:00:00'){
     $uren = ( strtotime($tijdout) - strtotime($tijdin)  ) / 60 / 60;
@@ -36,6 +46,9 @@ elseif($tijdout > '00:00:00'){
     $klokuit = 'Uitkloktijd: ';
     $tijdgewerkt = 'Werktijd: ';
     $en = " en ";
+    $tekst = 'Je hebt vandaag '.$uren.' uren en '.$decimal.' minuten gewerkt';
+    $tekstinklok = 'Inkloktijd: '.$tijdin;
+    $tekstuitklok = 'Uitkloktijd: '.$tijdout;
 }
 
 $username = $_COOKIE["username"]
@@ -86,7 +99,7 @@ $username = $_COOKIE["username"]
 <nav class="sidenav-border">
 
 
-    <div class="rounds"><img src="../img/agenda.png" class="navside-img"></div><h3 class="rounds-text">Agenda</h3>
+    <div class="rounds"><img src="../img/agenda.png" class="navside-img"></div><h3 class="rounds-text"><a href="agenda.php">Agenda</a></h3>
     <div class="rounds"><img src="../img/loon.png" class="navside-img"></div><h3 class="rounds-text">loon</h3>
     <div class="rounds"><img src="../img/uren.png" class="navside-img" alt="uren"></div><h3 class="rounds-text">uren</h3>
 
@@ -97,23 +110,23 @@ $username = $_COOKIE["username"]
         <section class="index-banner">
             <div class="index-boxlink-square">
                 <h3>Uren</h3>
-                <h1><?= $tijdin ?></h1><br>
-                <h1><?= $tijdout ?></h1>
-                <h1><?= $uren ?> uren en <?= $decimal ?> minuten</h1>
+                <h1>Inkloktijd: <?= $tijdin ?></h1>
+                <h1>Uitkloktijd: <?= $tijdout ?></h1>
+                <h1><?= $tekst ?></h1>
             </div>
 
             <div class="index-boxlink-square">
                 <h3>loon</h3>
-                <h1><?= $tijdin ?></h1><br>
-                <h1><?= $tijdout ?></h1>
-                <h1><?= $uren ?> uren en <?= $decimal ?> minuten</h1>
+                <h1>Inkloktijd: <?= $tijdin ?></h1>
+                <h1>Uitkloktijd: <?= $tijdout ?></h1>
+                <h1><?= $tekst ?></h1>
             </div>
 
             <div class="index-boxlink-square">
                 <h3>agenda</h3>
-                <h1><?= $tijdin ?></h1><br>
-                <h1><?= $tijdout ?></h1>
-                <h1><?= $uren ?> uren en <?= $decimal ?> minuten</h1>
+                <h1>Inkloktijd: <?= $tijdin ?></h1>
+                <h1>Uitkloktijd: <?= $tijdout ?></h1>
+                <h1><?= $tekst ?></h1>
             </div>
 
             <div class="index-boxlink-long">
@@ -124,6 +137,7 @@ $username = $_COOKIE["username"]
    </div>
 
 </main>
+
 
 
 

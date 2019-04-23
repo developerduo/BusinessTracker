@@ -269,7 +269,7 @@ ul li {
     color: white;
     font-weight: bold;
     font-size: 80px;
-    border: 10px solid rgb(255, 255, 255, 0);
+    border: 10px solid rgb(255, 255, 255);
     position: absolute;
     top: 30%;
     left: 50%;
@@ -543,7 +543,7 @@ ul li {
     background-color: #242424;
     position: absolute;
     right: 20px;
-    top: 60KOpx;
+    top: 60px;
     transition: all 0.3s ease-in-out;
     z-index: 0;
 }
@@ -770,14 +770,14 @@ header nav ul li a {
     }
 
     .index-boxlink-square{
-        width: calc((100% /3) - 48px) !important;
+        width: calc((100% / 3) - 48px) !important;
         height: 300px !important;
         background-color: white !important;
         box-shadow: 11px 11px 10px rgb(0,0,0);
     }
 
     .index-boxlink-long{
-        width: calc(100%-300px) !important;
+        width: calc(100% -300px) !important;
         height: 316px !important;
         background-color: white !important;
         box-shadow: 11px 11px 10px rgb(0,0,0);
@@ -812,6 +812,11 @@ header nav ul li a {
         font-size: 22px;
         text-transform: uppercase;
         float: left;
+        cursor: pointer;
+    }
+
+    .rounds-text a{
+        color: white;
     }
 
     .navside-img{
