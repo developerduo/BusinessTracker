@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 include 'uursyteem.php';
 include '../includes/config.php';

@@ -1,9 +1,6 @@
 <?php 
+session_start();
 
-if(isset($_POST['acceptCookie'])) {
-    setcookie("cookies", "true", time()+3600*24*365);
-    header('Location: ./index.php?Geaccepteerd');   
-}
 
 
 ?>
