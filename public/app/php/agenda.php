@@ -235,7 +235,7 @@ if(isset($_POST['overnemen'])) {
                 $query->execute();
 
                 function werkcheck($dag, $user_ID, $ID) {
-                    require 'config.php';
+                    require '../includes/config.php';
                     $stmt = $conn->prepare("SELECT * FROM agenda WHERE datum = :datum AND user_ID = :ID");
                     $stmt->bindParam(':datum', $dag);
                     $stmt->bindParam(':ID', $user_ID);
