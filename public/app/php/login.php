@@ -5,7 +5,7 @@ session_start();
 $loginError = '';
 
 if(isset($_SESSION['username'])) {
-    header("Location: ./main.php");
+    header("Location: ./dashboard.php");
 }
 
 if(isset($_POST['submitLogin'])) {
