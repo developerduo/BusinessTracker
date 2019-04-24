@@ -4,7 +4,7 @@
 include 'uursyteem.php';
 include 'config.php';
 
-$ID = $_COOKIE['id'];
+$ID = $_SESSION['ID'];
 $totaletijd = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id ");
 $totaletijd->bindParam(':datum', $date);
 $totaletijd->bindParam(':id', $ID);
@@ -51,7 +51,7 @@ elseif($tijdout > '00:00:00'){
     $tekstuitklok = 'Uitkloktijd: '.$tijdout;
 }
 
-$username = $_COOKIE["username"]
+$username = $_SESSION["username"]
 
 
 

@@ -4,7 +4,7 @@ session_start();
 
 $loginError = '';
 
-if(isset($_COOKIE['username'])) {
+if(isset($_SESSION['username'])) {
     header("Location: ./main.php");
 }
 
@@ -24,9 +24,9 @@ if(isset($_POST['submitLogin'])) {
         $firstname = $row['voornaam'];
         $id = $row['ID'];
         $userlevel = $row['userlevel'];
-        setcookie("username", $firstname, time() + 3600);
-        setcookie("id", $id, time() + 3600);
-        setcookie("userlevel" , $userlevel , time() + 3600);
+        $_SESSION['username'] = $firstname;
+        $_SESSION['ID'] = $id;
+        $_SESSION['userlevel'] = $userlevel;
         if($userlevel == 3){
             header("Location: ./inklok.php");
         }else {
@@ -42,7 +42,7 @@ catch(exception $E) {
 }
 }
 
-?>
+?>  
 
 <!DOCTYPE html>
 <html>

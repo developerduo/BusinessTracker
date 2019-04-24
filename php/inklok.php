@@ -1,6 +1,6 @@
 <?php
 
-$userlevel = $_COOKIE['userlevel'];
+$userlevel = $_SESSION['userlevel'];
 
 if($userlevel < 3){
     header("Location: ./dashboard.php");
@@ -23,7 +23,7 @@ if($userlevel < 3){
 
 <h1 class="title">Klok in</h1>
 
-<form action method="POST">
+<form method="POST">
     <div class="login_wrapper">
     <input type="password" name="pwd" placeholder="Code" class="klokininput">
     <button type="submit" name="klokin" class="klokininput">Klok in</button>

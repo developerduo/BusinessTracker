@@ -2,11 +2,11 @@
 
 require_once('config.php');
 
-if(!isset($_COOKIE['username'])) {
+if(!isset($_SESSION['username'])) {
     header('Location: ./logout.php');
 }
 
-$ID = $_COOKIE['id'];
+$ID = $_SESSION['ID'];
 
 
 //Check week
