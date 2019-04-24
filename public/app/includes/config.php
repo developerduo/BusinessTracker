@@ -1,8 +1,8 @@
 <?php
 
-$host = 'localhost';
-$username = 'root';
-$password = '';
+$host = 'stablemedia.nl:3306';
+$username = 'Damian';
+$password = '@Root101';
 $db = 'businesstracker';    
 $conn = NULL;
 
