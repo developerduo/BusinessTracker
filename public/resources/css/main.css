@@ -690,12 +690,7 @@ header nav ul li a {
 
     }
 
-    .index-boxlink-square{
-        width: calc((100% / 3) - 48px) !important;
-        height: 300px !important;
-        background-color: white !important;
-        box-shadow: 11px 11px 10px rgb(0,0,0);
-    }
+ 
 
     .index-boxlink-long{
         width: calc(100% -300px) !important;
@@ -803,7 +798,25 @@ header nav ul li a {
     }
 
 }
-
-
-
+.DashboardWrapper{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 50px;
+    
+}
+.blok{
+    height: 400px;
+    width: 400px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 10px;
+}
+.agendaGrafiekBlok{
+    height: 300px;
+    width: 1280px;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
 

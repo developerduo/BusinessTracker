@@ -54,7 +54,7 @@ elseif($tijdout > '00:00:00'){
     $tekstuitklok = 'Uitkloktijd: '.$tijdout;
 }
 
-$username = $_SESSION["username"]
+$username = $_SESSION["username"];
 
 
 
@@ -110,29 +110,25 @@ $username = $_SESSION["username"]
 </nav>
 <main>
    <div class="wrapper">
-        <section class="index-banner">
-            <div class="index-boxlink-square">
+        <section class="DashboardWrapper">
+            <div class="UrenBlok blok">
                 <h3>Uren</h3>
                 <h1>Inkloktijd: <?= $tijdin ?></h1>
                 <h1>Uitkloktijd: <?= $tijdout ?></h1>
                 <h1><?= $tekst ?></h1>
             </div>
 
-            <div class="index-boxlink-square">
+            <div class="loonBlok blok">
                 <h3>loon</h3>
-                <h1>Inkloktijd: <?= $tijdin ?></h1>
-                <h1>Uitkloktijd: <?= $tijdout ?></h1>
-                <h1><?= $tekst ?></h1>
+               
             </div>
 
-            <div class="index-boxlink-square">
+            <div class="agendaBlok blok">
                 <h3>agenda</h3>
-                <h1>Inkloktijd: <?= $tijdin ?></h1>
-                <h1>Uitkloktijd: <?= $tijdout ?></h1>
-                <h1><?= $tekst ?></h1>
+           
             </div>
 
-            <div class="index-boxlink-long">
+            <div class="agendaGrafiekBlok">
                 <h3>Grafiek</h3>
             </div>
 
