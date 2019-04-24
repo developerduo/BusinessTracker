@@ -1,5 +1,8 @@
 <?php
 session_start();
+if($_SESSION['userlevel'] == 3){
+    header("Location: ./inklok.php");
+}
 
 include 'uursyteem.php';
 include '../includes/config.php';
