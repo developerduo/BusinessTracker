@@ -1,0 +1,200 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+html body {
+  font-family: sans-serif;
+  background-color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+.WeekIndicatie {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  position: absolute;
+  margin-top: 13px;
+  margin-left: 10px;
+  border-right: 2px solid black;
+  padding-right: 5px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+table th, table td {
+  padding: 0;
+  border: 2px solid black;
+}
+table th {
+  padding: 3px;
+}
+
+.werkBlok {
+  background-color: #6ba3ff;
+  color: white;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}
+
+.werkBlok span {
+  margin: 2px;
+  width: 100%;
+}
+
+.agendaWrapper {
+  margin: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.userBlok {
+  text-align: center;
+}
+
+#PreviousWeek {
+  display: none;
+}
+
+#NextWeek {
+  display: none;
+}
+
+td {
+  height: 60px;
+  width: 100px;
+}
+
+th {
+  border-spacing: 4px;
+}
+
+.topBar {
+  background-color: #3b7fed;
+  width: 100%;
+  height: 50px;
+}
+
+.agendaNav {
+  background-color: white;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  transition: none;
+}
+.agendaNav p {
+  position: absolute;
+  margin-top: 16px;
+  left: 10px;
+  border-right: 2px solid black;
+  padding-right: 10px;
+}
+.agendaNav ul {
+  margin-left: 40px;
+  transition: none;
+  list-style-type: none;
+  position: relative;
+}
+.agendaNav ul li {
+  display: inline;
+  margin: 5px;
+  font-weight: 500;
+}
+.agendaNav a {
+  font-weight: normal;
+  font-size: initial;
+  color: black;
+  transition: none;
+  text-decoration: none;
+}
+
+#PreviousLabel {
+  cursor: pointer;
+  position: absolute;
+  left: 750px;
+  margin-top: 15px;
+  transition: font-size 0.1s ease-in-out;
+}
+
+#PreviousLabel:hover {
+  font-size: 24px;
+}
+
+#NextLabel {
+  cursor: pointer;
+  position: absolute;
+  left: 770px;
+  margin-top: 15px;
+}
+
+#NextLabel:hover {
+  font-size: 24px;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.naarVandaag {
+  position: absolute;
+  left: 650px;
+  margin-top: 13px;
+  border: none;
+  background-color: #2d68c6;
+  color: white;
+  font-weight: 500;
+  padding: 7px;
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition: letter-spacing 0.3s ease-in-out;
+}
+
+.vrijvraagBtn {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+}
+
+.vrijvraagTable {
+  position: absolute;
+  right: 0;
+}
+
+.Usermenu {
+  background-color: grey;
+  width: 160px;
+  height: 35px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+}
+.Usermenu #down {
+  display: none;
+}
+.Usermenu p {
+  border-right: none;
+}
+.Usermenu #username {
+  font-size: 20px;
+}
+.Usermenu .link {
+  display: none;
+}
+.Usermenu .icon {
+  float: right;
+  margin-top: 7px;
+  margin-right: 10px;
+}
+
+/*# sourceMappingURL=agenda.css.map */

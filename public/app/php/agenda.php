@@ -156,17 +156,25 @@ if(isset($_POST['overnemen'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='../../resources/css/main.css'>
+    <link rel='stylesheet' href='../../resources/css/agenda.css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Agenda</title>
 </head>
 <body>
     <nav class='agendaNav'>
-        <p>Agenda</p>
+        <p><b>Agenda</b></p>
         <ul>
-            <li><a href='#'>Home</a></li>
+            <li><a href='dashboard.php'>Home</a></li>
             <li><a href='#'>Loon</a></li>
         </ul>
+
+        <div class="Usermenu">
+            <i id='up' class="fas fa-angle-up icon"></i>
+            <i id='down' class="fas fa-angle-down icon"></i>
+            <p id='username'><?= $username ?></p>
+            <a id='profiel' class='link' href="">Profile</a>
+            <a id='profiel' class='link' href="">Uitloggen</a>
+        </div>
     </nav>
     <div class="agendaWrapper">
                 
@@ -175,10 +183,10 @@ if(isset($_POST['overnemen'])) {
                 <div class="nextWeek">
 
                 <form action="" method='post'><input id='PreviousWeek' value="Vorige week" type="submit" name='previousweek'><input type="hidden" name='week' value='<?= $weeknummer ?>'></form>
-                <label id='PreviousLabel' for="PreviousWeek"><i class="fas fa-chevron-left"></i></label>
+                <label title='Vorige Week' class='icon' id='PreviousLabel' for="PreviousWeek"><i class="fas fa-chevron-left"></i></label>
 
                 <form action="" method='post'><input id='NextWeek' value='Volgende week' type="submit" name='nextweek'><input type="hidden" name='week' value='<?= $weeknummer ?>'></form>
-                <label id='NextLabel' for="NextWeek"><i class="fas fa-chevron-right"></i></label>
+                <label title='Volgende Week' class="icon" id='NextLabel' for="NextWeek"><i class="fas fa-chevron-right"></i></label>
                 </div>
                 
                 <?php
@@ -207,8 +215,8 @@ if(isset($_POST['overnemen'])) {
                 <form  action="" method='post'>
                     <input class='naarVandaag' type="submit" value='Vandaag' name='naarVandaag'>
                 </form>
-                <p class='WeekIndicatie'><?= $maand ?> <?= $eersteDag ?> - <?= $maand ?> <?= $laatsteDag ?></p>
-                <p class='weekNummer'>Week: <?= $weeknummer ?></p>
+                <p class='WeekIndicatie'><?= $maand ?> <?= $eersteDag ?> - <?= $maand ?> <?= $laatsteDag ?>&nbsp&nbsp&nbsp&nbsp Week: <?= $weeknummer ?></p>
+                <p class='weekNummer'>  </p>
                 </div>
 
         <table align='left' class='agendaTable'>    
@@ -251,7 +259,7 @@ if(isset($_POST['overnemen'])) {
                     echo '<br>';
                     echo "<span>" . $vanaf . ' - ' . $tot . "</span>";   
                     if($user_ID == $ID) {
-                    echo "<form action='' method='POST'><input type='submit' name='vrijvragen' value='Vrij vragen'><input type='hidden' name='datum' value='".$result['datum']."'></form>";
+                    echo "<form action='' method='POST'><input class='vrijvraagBtn' type='submit' name='vrijvragen' value='Vrij vragen'><input type='hidden' name='datum' value='".$result['datum']."'></form>";
                     }
                     echo '</div>';                                                                                                                              
                     } 
@@ -260,7 +268,7 @@ if(isset($_POST['overnemen'])) {
                 while($row = $stmt->fetch()) { 
                     $user_ID = $row['ID'];  ?>
                 <tr>
-                    <td><?= $row['voornaam'] ?></td>
+                    <td class='userBlok'><?= $row['voornaam'] ?></td>
                     <td class='agendaBlok'><?php 
                     $result = werkcheck($maandag, $user_ID, $ID);  ?>
                     </td>
@@ -282,7 +290,7 @@ if(isset($_POST['overnemen'])) {
                     while($row = $query->fetch(PDO::FETCH_ASSOC)) { 
                     $user_ID = $row['ID'];  ?>
                 <tr>
-                    <td><?= $row['voornaam'] ?></td>
+                    <td class='userBlok'><?= $row['voornaam'] ?></td>
                     <td class='agendaBlok'><?php 
                     $result = werkcheck($maandag, $user_ID, $ID);  ?>
                     </td>
@@ -307,7 +315,7 @@ if(isset($_POST['overnemen'])) {
                 <tr>
                     <th>Datum</th>
                     <th>Naam</th>
-                    <th>Vrijvrager</th>
+                    <th>Taak</th>
                     <th>Overnemen</th>
                 </tr>
             </thead>
@@ -329,8 +337,8 @@ if(isset($_POST['overnemen'])) {
                             ?>
                                 <tr>
                                     <td><?= $row['datum'] ?></td>
-                                    <td><?= $row['naam'] ?></td>
                                     <td><?= $userRow['voornaam'] ?></td>
+                                    <td><?= $row['naam'] ?></td>
                                     <td><form action="" method="post">
                                     <input type="submit" value='overnemen' name='overnemen'>
                                     <input type="hidden" value="<?= $row['agenda_ID'] ?>" name='agenda_ID'>

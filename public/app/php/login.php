@@ -1,7 +1,7 @@
 <?php
 require_once('../includes/config.php');
 session_start();
-
+ 
 $loginError = '';
 
 if(isset($_SESSION['username'])) {

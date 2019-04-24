@@ -43,13 +43,37 @@ if(isset($_POST['klokin'])) {
                     if($row['tijdout'] > '00:00:00'){
                         header('Location: ?aluitgeklokt');
                     }else{
-                        $update = $conn->prepare("UPDATE hoursystem SET tijdout = '$time' WHERE datum = :datum AND user_ID = :id");
+                        $update = $conn->prepare("UPDATE hoursystem SET tijdout = :time WHERE datum = :datum AND user_ID = :id");
+                        $update->bindParam(':time', $time);
                         $update->bindParam(':datum', $date);
                         $update->bindParam(':id', $ID);
                         $update->execute();
-                        header('Location: ?uitgeklokt');}
-                } } else{
 
+                        if($update) {
+                        $checkTime = $conn->prepare('SELECT * FROM hoursystem WHERE user_ID = :id AND datum = :datum');
+                        $checkTime->bindParam(':id', $ID);
+                        $checkTime->bindParam(':datum', $date);
+                        $checkTime->execute();
+                        if($checkTime->rowCount() > 0) {
+                            while($row = $checkTime->fetch(PDO::FETCH_ASSOC)) {
+                                $vanaf = $row['tijdin'];
+                                $tot = $row['tijdout'];
+                                $datum = date("d-m-Y");
+                                $updateAgenda = $conn->prepare("UPDATE agenda SET vanaf = :vanaf, tot = :tot WHERE user_ID = :id AND datum = :datum");
+                                $updateAgenda->bindParam(':vanaf', $vanaf);
+                                $updateAgenda->bindParam(':tot', $tot);
+                                $updateAgenda->bindParam(':id', $ID);
+                                $updateAgenda->bindParam(':datum', $datum);
+                                $updateAgenda->execute();
+                                if($updateAgenda) {
+                                header('Location: ?uitgeklokt');
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+                }  else{
                 //User is nog niet ingeklokt
                 $insert = $conn->prepare("INSERT INTO hoursystem (datum, user_ID, tijdin) VALUES (:datum, :id, :tijd);");
                 $insert->bindParam(':datum', $date);
