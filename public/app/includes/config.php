@@ -1,5 +1,5 @@
 <?php
-/*
+
 $host = 'stablemedia.nl:3306';
 $username = 'Damian';
 $password = '@Root101';
@@ -11,9 +11,9 @@ try{
 } 
 catch(PDOException $E) {
     $error = $E->getMessage();
-}*/
+}
 
-
+/*
 $host = 'localhost';
 $username = 'root';
 $password = '';
@@ -26,3 +26,4 @@ try{
 catch(PDOException $E) {
     $error = $E->getMessage();
 }
+*/
