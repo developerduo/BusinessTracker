@@ -1,5 +1,5 @@
 <?php
-require_once('config.php');
+require_once('../includes/config.php');
 session_start();
 
 $loginError = '';
@@ -52,7 +52,7 @@ catch(exception $E) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../resources/css/main.css">
 </head>
 
 <body class="bovenkant">
@@ -61,13 +61,13 @@ catch(exception $E) {
      <h1>Login</h1>
   <input type="text" name="email" placeholder="Gebruikersnaam" class="input">
   <input type="password" name="pwd" placeholder="Wachtwoord" class="input">
-  <input type="submit" name="submitLogin" class="input" id="submit_btn" value="Login">
+  <input type="submit"  name="submitLogin" class="input" id="submit_btn" value="Login">
   <p id='loginError'><?= $loginError ?></p>
 </form>
 
 
 
-    <script src="main.js"></script>
+    <script src="../../resources/js/main.js"></script>
 </body>
 
 </html>

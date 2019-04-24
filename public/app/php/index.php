@@ -14,7 +14,7 @@ if(isset($_POST['acceptCookie'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BusinessTracker</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../resources/css/main.css">
     <link rel='icon' href='../img/businesstracker logo test.png'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
@@ -47,7 +47,7 @@ if(isset($_POST['acceptCookie'])) {
                 </ul>
             </div>
             <div class="sidebar">
-                <img src="../img/businesstrackerManagePicture.png" alt="">
+                <img src="../../resources/img/businesstrackerManagePicture.png" alt="">
             </div>
     </header>
 

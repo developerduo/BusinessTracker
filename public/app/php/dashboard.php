@@ -2,7 +2,7 @@
 
 
 include 'uursyteem.php';
-include 'config.php';
+include '../includes/config.php';
 
 $ID = $_SESSION['ID'];
 $totaletijd = $conn->prepare("SELECT * FROM hoursystem WHERE datum = :datum AND user_ID = :id ");
@@ -64,7 +64,7 @@ $username = $_SESSION["username"]
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>DASHBOARD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../../resources/css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
 
@@ -77,7 +77,7 @@ $username = $_SESSION["username"]
        <h4 onclick="Usersettings()" id="dropdown"> > </h4>
        <div id='Hidden'>
            <div class="profilesettings">
-               <img src="../img/profile.png">
+               <img src="../../resources/img/profile.png">
                <div class="profile">Profile</div>
            </div>
            <a href="./logout.php" id="logout">Logout</a>
@@ -99,9 +99,9 @@ $username = $_SESSION["username"]
 <nav class="sidenav-border">
 
 
-    <div class="rounds"><img src="../img/agenda.png" class="navside-img"></div><h3 class="rounds-text"><a href="agenda.php">Agenda</a></h3>
-    <div class="rounds"><img src="../img/loon.png" class="navside-img"></div><h3 class="rounds-text">loon</h3>
-    <div class="rounds"><img src="../img/uren.png" class="navside-img" alt="uren"></div><h3 class="rounds-text">uren</h3>
+    <div class="rounds"><img src="../../resources/img/agenda.png" class="navside-img"></div><h3 class="rounds-text"><a href="agenda.php">Agenda</a></h3>
+    <div class="rounds"><img src="../../resources/img/loon.png" class="navside-img"></div><h3 class="rounds-text">loon</h3>
+    <div class="rounds"><img src="../../resources/img/uren.png" class="navside-img" alt="uren"></div><h3 class="rounds-text">uren</h3>
 
 
 </nav>
@@ -145,7 +145,7 @@ $username = $_SESSION["username"]
 
 
 
-<script src="../js/main.js"></script>
+<script src="../../resources/js/main.js"></script>
 </body>
 </html>
 

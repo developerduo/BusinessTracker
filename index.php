@@ -1,5 +1,5 @@
 <?php
 
- header("Location: ./php/main.php");
+ header("Location: ./public/app/php/main.php");
 
 ?>
