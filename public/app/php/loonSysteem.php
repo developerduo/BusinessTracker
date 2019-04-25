@@ -8,7 +8,7 @@ $urenArray = [];
 
 include '../includes/config.php';
 
-$selectAgenda = $conn->prepare("SELECT * FROM agenda WHERE datum LIKE '%-$maand-%'");
+$selectAgenda = $conn->prepare("SELECT * FROM agenda WHERE datum LIKE '%-$maand-%' AND user_ID = $ID");
 $selectAgenda->execute();
 if($selectAgenda->rowCount() > 0) {
     while($row = $selectAgenda->fetch(PDO::FETCH_ASSOC)) {
