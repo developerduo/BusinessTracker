@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 
 $ID = $_SESSION['ID'];
 
@@ -17,16 +17,14 @@ if($selectAgenda->rowCount() > 0) {
         $difference = round(abs($tot - $vanaf) / 3600,2);
         array_push($urenArray, $difference);  
     }
-    $uren =  array_sum($urenArray);
-    echo "Uren: " . $uren . "<br>"; 
-
+    $urenDezeMaand =  array_sum($urenArray);     
     $selectUser = $conn->prepare("SELECT * FROM users WHERE ID = :ID");
     $selectUser->bindParam(':ID', $ID);
     $selectUser->execute();
     while($row = $selectUser->fetch(PDO::FETCH_ASSOC)) {
         $uurloon = $row['uurloon'];
         $uurloon = floatval($uurloon);
-        $betalen = $uren * $uurloon;
-        echo "Te betalen: " . $betalen;
+        $betalen = $urenDezeMaand * $uurloon;
+        $betalen = number_format($betalen, 2);
     }
 }

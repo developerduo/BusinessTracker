@@ -802,8 +802,6 @@ header nav ul li a {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    padding-left: 50px;
-    
 }
 .blok{
     height: 400px;

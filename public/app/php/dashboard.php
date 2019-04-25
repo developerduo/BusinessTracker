@@ -5,6 +5,7 @@ if($_SESSION['userlevel'] == 3){
 }
 
 include 'uursyteem.php';
+include 'loonSysteem.php';
 include '../includes/config.php';
 
 $ID = $_SESSION['ID'];
@@ -120,7 +121,8 @@ $username = $_SESSION["username"];
 
             <div class="loonBlok blok">
                 <h3>loon</h3>
-               
+                <p>Uren deze maand: <?= $urenDezeMaand ?></p>
+                <p>Loon deze maand: €<?= $betalen ?></p>
             </div>
 
             <div class="agendaBlok blok">

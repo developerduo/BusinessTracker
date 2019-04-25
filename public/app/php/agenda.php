@@ -238,7 +238,7 @@ if(isset($_POST['overnemen'])) {
                 $stmt->bindParam(':ID', $ID);
                 $stmt->execute();
 
-                $query = $conn->prepare("SELECT * FROM users WHERE NOT ID = :ID ORDER BY achternaam");
+                $query = $conn->prepare("SELECT * FROM users WHERE NOT ID = :ID AND NOT userlevel > 2 ORDER BY achternaam");
                 $query->bindParam(':ID', $ID);
                 $query->execute();
 
