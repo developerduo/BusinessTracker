@@ -7,7 +7,7 @@ if(!isset($_SESSION['username'])) {
 }
 
 $ID = $_SESSION['ID'];
-
+$username = $_SESSION['username'];
 
 //Check week
 $year = date("Y");
