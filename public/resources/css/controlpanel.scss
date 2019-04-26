@@ -1,0 +1,35 @@
+$navbar: #323233;
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+    font-family: sans-serif;
+    color: white;
+}
+.navBar{
+    background-color: $navbar;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    h2{
+        text-align: center; 
+        margin: 10px;
+    }
+    .list{
+        background-color: #d3d0c6;
+        margin-top: 30px;
+        width: 100%;
+        text-align: center;
+        .listKop{
+            margin: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+    }
+}
